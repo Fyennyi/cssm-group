@@ -1,1 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSM Group</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <section id="section1" class="section">
+            <div class="language-switcher">
+                <div class="dropdown">
+                    <button id="dropdown-button"><%= translations['dropdown-button'] %></button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="/set-language/uk">UK</a>
+                        <a href="/set-language/en">EN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h1><%= translations['section1-title'] %></h1>
+                <p><%= translations['section1-subtitle'] %></p>
+                <a href="#section2" class="btn"><%= translations['section1-button'] %></a>
+            </div>
+            <div id="cube1" class="cube"></div>
+        </section>
 
+        <section id="section2" class="section">
+            <div class="content">
+                <h2><%= translations['section2-title'] %></h2>
+                <p><%= translations['section2-content'] %></p>
+            </div>
+            <div id="cube2" class="cube"></div>
+        </section>
+
+        <section id="section3" class="section">
+            <div class="content">
+                <h2><%= translations['section3-title'] %></h2>
+                <ul>
+                    <li><%= translations['section3-item1'] %></li>
+                    <li><%= translations['section3-item2'] %></li>
+                    <li><%= translations['section3-item3'] %></li>
+                    <li><%= translations['section3-item4'] %></li>
+                    <li><%= translations['section3-item5'] %></li>
+                </ul>
+                <a href="#section5" class="btn"><%= translations['section3-button'] %></a>
+            </div>
+            <div id="cube3" class="cube"></div>
+        </section>
+
+        <section id="section4" class="section">
+            <div class="content">
+                <h2><%= translations['section4-title'] %></h2>
+                <div id="portfolioGrid" class="portfolio-grid">
+                    <div class="portfolio-item" data-article-id="cubecraft">
+                        <h3>CubeCraft Network</h3>
+                        <p>Повний ребрендинг популярної мережі серверів, включаючи новий логотип, вебсайт та ресурспак.</p>
+                    </div>
+                    <div class="portfolio-item" data-article-id="morf-editorial">
+                        <h3>Morf Editorial</h3>
+                        <p>Розробка унікальної айдентики для спільноти машиніматорів Minecraft.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>BlockWars</h3>
+                        <p>Створення захоплюючого візуального стилю для PvP‐орієнтованого серверу.</p>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>EcoVille</h3>
+                        <p>Дизайн еко‐френдлі бренду для серверу, присвяченого будівництву та економіці.</p>
+                    </div>
+                    <div class="portfolio-item hidden-portfolio-item">
+                        <h3>SkyBlock Paradise</h3>
+                        <p>Створення яскравого та привабливого бренду для популярного SkyBlock серверу.</p>
+                    </div>
+                    <div class="portfolio-item hidden-portfolio-item">
+                        <h3>MineRPG</h3>
+                        <p>Розробка комплексної айдентики для сервера з елементами RPG та унікальними квестами.</p>
+                    </div>
+                </div>
+                <button id="togglePortfolio" class="btn"><%= translations['toggle-portfolio-view'] %></button>
+            </div>
+            <div id="cube4" class="cube"></div>
+        </section>
+
+        <section id="section5" class="section">
+            <div class="content">
+                <h2><%= translations['section5-title'] %></h2>
+                <p><%= translations['section5-content'] %></p>
+                <a href="#" class="btn"><%= translations['section5-button'] %></a>
+            </div>
+            <div id="cube5" class="cube"></div>
+        </section>
+
+        <footer>
+            <div class="footer-section">
+                <h3>CSSM Group</h3>
+                <p><%= translations['footer-description'] %></p>
+            </div>
+            <div class="footer-section">
+                <h3><%= translations['footer-contacts'] %></h3>
+                <p><%= translations['footer-email'] %></p>
+                <p><%= translations['footer-phone'] %></p>
+            </div>
+            <div class="footer-section">
+                <h3><%= translations['footer-follow'] %></h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Fyennyi" aria-label="Facebook">📘</a>
+                    <a href="https://www.twitter.com/Fyennyi" aria-label="Twitter">🐦</a>
+                    <a href="https://www.instagram.com/fyennyi" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+            <div class="credit">
+                З любов'ю створено в <span onclick="window.location.href='https://incolorstudios.com'">InColor Studios</span>
+            </div>
+        </footer>
+    </div>
+
+    <div id="cookie-notice" style="display: none;">
+        <div>
+            <p><%= translations['cookie-notice'] %></p>
+            <button id="accept-cookies"><%= translations['cookie-accept'] %></button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
