@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'No build step required for basic SSR'"
+    "build": "mkdir -p out && echo 'No build step required for basic SSR'"
   },
   "dependencies": {
     "express": "^4.17.1",
