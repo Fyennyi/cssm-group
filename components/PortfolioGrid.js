@@ -17,7 +17,7 @@ export default function PortfolioGrid({ t }) {
 
   return (
     <section id="section4">
-      <div class="content">
+      <div className="content">
         <h2>{t('section4-title')}</h2>
         <div className="portfolio-grid">
           {visibleItems.map((item, index) => (

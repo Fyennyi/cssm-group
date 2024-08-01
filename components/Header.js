@@ -14,7 +14,7 @@ export default function Header({ lang, setLang, t }) {
       <div className="dropdown">
         <button onClick={toggleDropdown} className="main-button">{t('dropdown-button')}</button>
         {showDropdown && (
-          <div class="dropdown-content" id="dropdown-content">
+          <div className="dropdown-content" id="dropdown-content">
             <button onClick={() => changeLanguage('uk')}>UK</button>
             <button onClick={() => changeLanguage('en')}>EN</button>
           </div>
