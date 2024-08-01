@@ -232,7 +232,7 @@ body {
     z-index: 9999;
 }
 
-#cookie-notice .container {
+#cookie-notice .cookie-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
