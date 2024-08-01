@@ -10,16 +10,16 @@ export default function Header({ lang, setLang, t }) {
   }
 
   return (
-    <header>
-      <div className="language-switcher">
-        <button onClick={toggleDropdown}>{t('dropdown-button')}</button>
+    <div className="language-switcher">
+      <div className="dropdown">
+        <button onClick={toggleDropdown} className="main-button">{t('dropdown-button')}</button>
         {showDropdown && (
-          <div className="dropdown-content">
+          <div class="dropdown-content" id="dropdown-content">
             <button onClick={() => changeLanguage('uk')}>UK</button>
             <button onClick={() => changeLanguage('en')}>EN</button>
           </div>
         )}
       </div>
-    </header>
+    </div>
   )
 }
