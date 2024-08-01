@@ -6,7 +6,6 @@ import Footer from '../components/Footer'
 import CookieNotice from '../components/CookieNotice'
 import PortfolioGrid from '../components/PortfolioGrid'
 import { useTranslation } from '../lib/translations'
-import '../styles/globals.css'
 
 export default function Home() {
   const [lang, setLang] = useState('uk')

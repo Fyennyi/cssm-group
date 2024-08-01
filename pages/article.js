@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import { useTranslation } from '../lib/translations'
-import '../styles/article.css'
 
 const articles = [
   {
