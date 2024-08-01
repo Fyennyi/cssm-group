@@ -1,14 +1,22 @@
 ﻿import { useState, useEffect, useRef } from 'react';
+import Cookies from 'js-cookie';
 
 export default function Header({ lang, setLang }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => setShowDropdown(prev => !prev);
   const changeLanguage = (newLang) => {
     setLang(newLang);
+    Cookies.set('language', newLang);
     setShowDropdown(false);
   };
+
+  useEffect(() => {
+    const savedLang = Cookies.get('language');
+    if (savedLang) {
+      setLang(savedLang);
+    }
+  }, [setLang]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -26,8 +34,8 @@ export default function Header({ lang, setLang }) {
   return (
     <div className="language-switcher">
       <div className="dropdown" ref={dropdownRef}>
-        <button onClick={toggleDropdown} className="main-button">
-          {lang.toUpperCase()}
+        <button onClick={() => setShowDropdown(prev => !prev)} className="main-button">
+          {lang ? lang.toUpperCase() : 'LANG'} {/* Додано перевірку */}
         </button>
         {showDropdown && (
           <div className={`dropdown-content ${showDropdown ? 'show' : ''}`} id="dropdown-content">

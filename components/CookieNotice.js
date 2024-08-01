@@ -1,49 +1,29 @@
-﻿import { useState, useEffect, useRef } from 'react';
-import Cookies from 'js-cookie';
+﻿import { useState, useEffect } from 'react'
+import Cookies from 'js-cookie'
 
-export default function Header({ lang, setLang }) {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const changeLanguage = (newLang) => {
-    setLang(newLang);
-    Cookies.set('language', newLang);
-    setShowDropdown(false);
-  };
+export default function CookieNotice({ t }) {
+  const [showNotice, setShowNotice] = useState(false)
 
   useEffect(() => {
-    const savedLang = Cookies.get('language');
-    if (savedLang) {
-      setLang(savedLang);
+    const consent = Cookies.get('cookieConsent')
+    if (!consent) {
+      setShowNotice(true)
     }
-  }, [setLang]);
+  }, [])
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
+  const acceptCookies = () => {
+    Cookies.set('cookieConsent', 'accepted', { expires: 365 })
+    setShowNotice(false)
+  }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+  if (!showNotice) return null
 
   return (
-    <div className="language-switcher">
-      <div className="dropdown" ref={dropdownRef}>
-        <button onClick={() => setShowDropdown(prev => !prev)} className="main-button">
-          {lang.toUpperCase()}
-        </button>
-        {showDropdown && (
-          <div className={`dropdown-content ${showDropdown ? 'show' : ''}`} id="dropdown-content">
-            <button onClick={() => changeLanguage('uk')}>UK</button>
-            <button onClick={() => changeLanguage('en')}>EN</button>
-          </div>
-        )}
+    <div id="cookie-notice">
+      <div>
+        <p>{t('cookie-notice-text')}</p>
+        <button onClick={acceptCookies}>{t('cookie-notice-accept')}</button>
       </div>
     </div>
-  );
+  )
 }
