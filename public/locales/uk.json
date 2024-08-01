@@ -16,6 +16,12 @@
     "section4-title": "Наше портфоліо",
     "toggle-portfolio-view": "Переглянути все портфоліо",
     "toggle-portfolio-collapse": "Згорнути портфоліо",
+    "portfolio-cubecraft": "Повний ребрендинг популярної мережі серверів, включаючи новий логотип, вебсайт та ресурспак.",
+    "portfolio-morf": "Розробка унікальної айдентики для спільноти машиніматорів Minecraft.",
+    "portfolio-blockwars": "Створення захоплюючого візуального стилю для PvP‐орієнтованого серверу.",
+    "portfolio-ecoville": "Дизайн еко‐френдлі бренду для серверу, присвяченого будівництву та економіці.",
+    "portfolio-skyblock": "Створення яскравого та привабливого бренду для популярного SkyBlock серверу.",
+    "portfolio-minerpg": "Розробка комплексної айдентики для сервера з елементами RPG та унікальними квестами.",
     "section5-title": "Зв’яжіться з нами",
     "section5-content": "Готові перетворити свій Minecraft‐проєкт на справжній бренд? Давайте поговоримо!",
     "section5-button": "Написати нам",
@@ -23,5 +29,8 @@
     "footer-contacts": "Контакти",
     "footer-email": "Електронна пошта: questions@cssm.pp.ua",
     "footer-phone": "Телефон: +380 96 393 6694",
-    "footer-follow": "Слідкуйте за нами"
+    "footer-follow": "Слідкуйте за нами",
+    "footer-credit": "З любов’ю створено в <span onClick={() => window.open('https://incolorstudios.com', '_blank')}>InColor Studios</span>",
+    "cookie-notice-text": "ΜИ ВИКОРИСТОВУЄМО COOKIE. ПРИЙМАЄТЕ?",
+    "cookie-notice-accept": "ТАК"
 }

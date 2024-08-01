@@ -16,6 +16,12 @@
     "section4-title": "Our Portfolio",
     "toggle-portfolio-view": "View full portfolio",
     "toggle-portfolio-collapse": "Collapse portfolio",
+    "portfolio-cubecraft": "Complete rebranding of a popular server network, including a new logo, website, and resource pack.",
+    "portfolio-morf": "Development of a unique identity for a Minecraft machinima community.",
+    "portfolio-blockwars": "Creation of an engaging visual style for a PvP-oriented server.",
+    "portfolio-ecoville": "Design of an eco-friendly brand for a server dedicated to building and economy.",
+    "portfolio-skyblock": "Creation of a vibrant and attractive brand for a popular SkyBlock server.",
+    "portfolio-minerpg": "Development of a comprehensive identity for a server with RPG elements and unique quests.",
     "section5-title": "Contact Us",
     "section5-content": "Ready to turn your Minecraft project into a real brand? Let’s talk!",
     "section5-button": "Write to us",
@@ -23,5 +29,8 @@
     "footer-contacts": "Contacts",
     "footer-email": "Email: questions@cssm.pp.ua",
     "footer-phone": "Phone: +380 96 393 6694",
-    "footer-follow": "Follow us"
+    "footer-follow": "Follow us",
+    "footer-credit": "Created with love by <span onClick={() => window.open('https://incolorstudios.com', '_blank')}>InColor Studios</span>",
+    "cookie-notice-text": "WE USE COOKIES. ACCEPT?",
+    "cookie-notice-accept": "YES"
 }
