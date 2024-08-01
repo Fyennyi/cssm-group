@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import { useTranslation } from '../lib/translations'
+import '../styles/article.css'
 
 const articles = [
   {
@@ -103,7 +104,7 @@ export default function Article() {
 
   if (!article) {
     return (
-      <Layout lang={lang} setLang={setLang} t={t} pageType="article">
+      <Layout lang={lang} setLang={setLang} t={t}>
         <div className="error-container">
           <h1 className="error-title">{t('article-error-title')}</h1>
           <p className="error-message">{t('article-error-message')}</p>
@@ -114,7 +115,7 @@ export default function Article() {
   }
 
   return (
-    <Layout lang={lang} setLang={setLang} t={t} pageType="article">
+    <Layout lang={lang} setLang={setLang} t={t}>
       <Head>
         <title>{`${article.title} — Fyennyi Digital`}</title>
       </Head>
