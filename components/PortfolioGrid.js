@@ -19,6 +19,9 @@ export default function PortfolioGrid({ t }) {
     if (id) {
       setClickedItem(id)
       setTimeout(() => {
+        setClickedItem(null)
+      }, 300)
+      setTimeout(() => {
         window.open(`/article?id=${id}`, '_blank')
       }, 300)
     }
