@@ -184,7 +184,12 @@ body {
     cursor: pointer;
 }
 
-.portfolio-item.clickable:focus {
+.portfolio-item.clickable:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.portfolio-item.clickable:active {
     background-color: #000000;
     color: #ffffff;
 }
