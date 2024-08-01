@@ -217,3 +217,40 @@ body {
     background-color: transparent;
     color: #000000;
 }
+
+#cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    z-index: 9999;
+    display: none;
+}
+
+#cookie-notice .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cookie-notice p {
+    margin: 0;
+    padding: 0;
+}
+
+#accept-cookies {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    cursor: pointer;
+}
