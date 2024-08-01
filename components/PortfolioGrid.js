@@ -17,23 +17,25 @@ export default function PortfolioGrid({ t }) {
 
   return (
     <section id="section4">
-      <h2>{t('section4-title')}</h2>
-      <div className="portfolio-grid">
-        {visibleItems.map((item, index) => (
-          <div key={index} className="portfolio-item">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            {item.id && (
-              <Link href={`/article?id=${item.id}`}>
-                <a target="_blank">{t('portfolio-read-more')}</a>
-              </Link>
-            )}
-          </div>
-        ))}
+      <div class="content">
+        <h2>{t('section4-title')}</h2>
+        <div className="portfolio-grid">
+          {visibleItems.map((item, index) => (
+            <div key={index} className="portfolio-item">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              {item.id && (
+                <Link href={`/article?id=${item.id}`}>
+                  <a target="_blank">{t('portfolio-read-more')}</a>
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+        <button onClick={() => setExpanded(!expanded)}>
+          {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
+        </button>
       </div>
-      <button onClick={() => setExpanded(!expanded)}>
-        {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
-      </button>
     </section>
   )
 }
