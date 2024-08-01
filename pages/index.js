@@ -23,32 +23,40 @@ export default function Home() {
 
         <main>
           <section id="section1">
-            <h1>{t('section1-title')}</h1>
-            <p>{t('section1-subtitle')}</p>
-            <a href="#section2">{t('section1-button')}</a>
+            <div class="content">
+              <h1>{t('section1-title')}</h1>
+              <p>{t('section1-subtitle')}</p>
+              <a href="#section2">{t('section1-button')}</a>
+            </div>
           </section>
 
           <section id="section2">
-            <h2>{t('section2-title')}</h2>
-            <p>{t('section2-content')}</p>
+            <div class="content">
+              <h2>{t('section2-title')}</h2>
+              <p>{t('section2-content')}</p>
+            </div>
           </section>
 
           <section id="section3">
-            <h2>{t('section3-title')}</h2>
-            <ul>
-              {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
-                <li key={index}>{t(`section3-${item}`)}</li>
-              ))}
-            </ul>
-            <a href="#section5">{t('section3-button')}</a>
+            <div class="content">
+              <h2>{t('section3-title')}</h2>
+              <ul>
+                {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
+                  <li key={index}>{t(`section3-${item}`)}</li>
+                ))}
+              </ul>
+              <a href="#section5">{t('section3-button')}</a>
+            </div>
           </section>
 
           <PortfolioGrid t={t} />
 
           <section id="section5">
-            <h2>{t('section5-title')}</h2>
-            <p>{t('section5-content')}</p>
-            <a href="#">{t('section5-button')}</a>
+            <div class="content">
+              <h2>{t('section5-title')}</h2>
+              <p>{t('section5-content')}</p>
+              <a href="#">{t('section5-button')}</a>
+            </div>
           </section>
         </main>
 
