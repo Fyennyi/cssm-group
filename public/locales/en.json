@@ -30,7 +30,7 @@
     "footer-email": "Email: questions@cssm.pp.ua",
     "footer-phone": "Phone: +380 96 393 6694",
     "footer-follow": "Follow us",
-    "footer-credit": "Created with love by <span onClick={() => window.open('https://incolorstudios.com', '_blank')}>InColor Studios</span>",
+    "footer-credit": "Created with love by",
     "cookie-notice-text": "WE USE COOKIES. ACCEPT?",
     "cookie-notice-accept": "YES"
 }
