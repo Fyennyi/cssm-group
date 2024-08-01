@@ -4,7 +4,7 @@ export default function Footer({ t }) {
   return (
     <footer>
       <div className="footer-section">
-        <h3>CSSM Group</h3>
+        <h3>{t('site-title')}</h3>
         <p>{t('footer-description')}</p>
       </div>
       <div className="footer-section">
