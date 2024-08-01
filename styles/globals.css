@@ -177,14 +177,16 @@ body {
     padding: 1rem;
     text-align: left;
     color: #000000;
-    cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.portfolio-item:hover {
+.portfolio-item.clickable {
+    cursor: pointer;
+}
+
+.portfolio-item.clickable:hover {
     background-color: #000000;
     color: #ffffff;
-    cursor: pointer;
 }
 
 .portfolio-item.clicked {
