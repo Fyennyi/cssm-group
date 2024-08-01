@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "cssm-group-website",
   "version": "1.0.0",
   "description": "CSSM Group - Minecraft branding agency website",
@@ -9,12 +9,6 @@
     "start": "next start",
     "export": "next build && next export"
   },
-  "keywords": [
-    "minecraft",
-    "branding",
-    "agency",
-    "nextjs"
-  ],
   "author": "CSSM Group",
   "license": "ISC",
   "dependencies": {
