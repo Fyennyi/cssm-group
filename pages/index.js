@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import CookieNotice from '../components/CookieNotice'
 import PortfolioGrid from '../components/PortfolioGrid'
 import { useTranslation } from '../lib/translations'
 
@@ -22,7 +21,7 @@ export default function Home() {
         <main>
           <section id="section1">
             <Header lang={lang} setLang={setLang} t={t} />
-            <div class="content">
+            <div className="content">
               <h1>{t('section1-title')}</h1>
               <p>{t('section1-subtitle')}</p>
               <a href="#section2">{t('section1-button')}</a>
@@ -30,14 +29,14 @@ export default function Home() {
           </section>
 
           <section id="section2">
-            <div class="content">
+            <div className="content">
               <h2>{t('section2-title')}</h2>
               <p>{t('section2-content')}</p>
             </div>
           </section>
 
           <section id="section3">
-            <div class="content">
+            <div className="content">
               <h2>{t('section3-title')}</h2>
               <ul>
                 {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
@@ -51,7 +50,7 @@ export default function Home() {
           <PortfolioGrid t={t} />
 
           <section id="section5">
-            <div class="content">
+            <div className="content">
               <h2>{t('section5-title')}</h2>
               <p>{t('section5-content')}</p>
               <a href="#">{t('section5-button')}</a>
