@@ -125,9 +125,9 @@ body {
 .cube {
     animation: float 6s ease-in-out infinite;
     background: rgba(0, 0, 0, 0.1);
+    width: 100px;
     height: 100px;
     position: absolute;
-    width: 100px;
 }
 
 @keyframes float {
@@ -147,6 +147,9 @@ body {
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
     font-size: clamp(0.9rem, 2vw, 1rem);
     padding: 0.8rem 1.5rem;
     text-decoration: none;
