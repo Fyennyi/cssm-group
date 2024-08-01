@@ -1,10 +1,8 @@
 ﻿import { useState } from 'react'
-import { useRouter } from 'next/router'
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false)
   const [clickedItem, setClickedItem] = useState(null)
-  const router = useRouter()
 
   const portfolioItems = [
     { id: 'cubecraft', title: 'CubeCraft Network', description: t('portfolio-cubecraft') },
@@ -21,7 +19,7 @@ export default function PortfolioGrid({ t }) {
     if (id) {
       setClickedItem(id)
       setTimeout(() => {
-        router.push(`/article?id=${id}`)
+        window.open(`/article?id=${id}`, '_blank')
       }, 300)
     }
   }
