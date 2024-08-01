@@ -21,7 +21,9 @@ export default function Footer({ t }) {
           <Link href="#">💼</Link>
         </div>
       </div>
-      <div className="credit" dangerouslySetInnerHTML={{ __html: t('footer-credit') }} />
+      <div className="credit">
+        {t('footer-credit')} <span onClick={() => window.open('https://www.facebook.com/incolor.webstudio', '_blank')}>InColor Studios</span>
+      </div>
     </footer>
   )
 }
