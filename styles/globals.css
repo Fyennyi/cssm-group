@@ -181,6 +181,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.portfolio-item:hover {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .portfolio-item.clicked {
     background-color: #000000;
     color: #ffffff;
