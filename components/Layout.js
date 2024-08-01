@@ -3,7 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import CookieNotice from './CookieNotice'
 
-export default function Layout({ children, lang, setLang, t }) {
+export default function Layout({ children, lang, setLang, t, pageType }) {
   return (
     <div className="container">
       <Head>
