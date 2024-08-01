@@ -36,6 +36,7 @@ export default function PortfolioGrid({ t }) {
           {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
         </button>
       </div>
+      <div id="cube4" class="cube"></div>
     </section>
   )
 }
