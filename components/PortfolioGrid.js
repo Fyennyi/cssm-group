@@ -35,10 +35,9 @@ export default function PortfolioGrid({ t }) {
           {visibleItems.map((item, index) => (
             <div
               key={index}
-              className={`portfolio-item ${item.id === clickedItem ? 'clicked' : ''}`}
+              className={`portfolio-item ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
               data-article-id={item.id}
               onClick={() => handleCardClick(item.id)}
-              style={{ cursor: item.id ? 'pointer' : 'default' }}
             >
               <h3>{item.title}</h3>
               <p>{item.description}</p>

@@ -1,6 +1,6 @@
 ﻿import { useState, useEffect, useRef } from 'react';
 
-export default function Header({ lang, setLang, t }) {
+export default function Header({ lang, setLang }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -27,7 +27,7 @@ export default function Header({ lang, setLang, t }) {
     <div className="language-switcher">
       <div className="dropdown" ref={dropdownRef}>
         <button onClick={toggleDropdown} className="main-button">
-          {t('dropdown-button')}
+          {lang.toUpperCase()}
         </button>
         {showDropdown && (
           <div className={`dropdown-content ${showDropdown ? 'show' : ''}`} id="dropdown-content">
