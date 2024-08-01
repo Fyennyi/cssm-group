@@ -19,7 +19,7 @@ export default function Home() {
         </Head>
 
         <main>
-          <section id="section1">
+          <section id="section1" className="section">
             <Header lang={lang} setLang={setLang} t={t} />
             <div className="content">
               <h1>{t('section1-title')}</h1>
@@ -28,14 +28,14 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="section2">
+          <section id="section2" className="section">
             <div className="content">
               <h2>{t('section2-title')}</h2>
               <p>{t('section2-content')}</p>
             </div>
           </section>
 
-          <section id="section3">
+          <section id="section3" className="section">
             <div className="content">
               <h2>{t('section3-title')}</h2>
               <ul>
@@ -49,7 +49,7 @@ export default function Home() {
 
           <PortfolioGrid t={t} />
 
-          <section id="section5">
+          <section id="section5" className="section">
             <div className="content">
               <h2>{t('section5-title')}</h2>
               <p>{t('section5-content')}</p>
