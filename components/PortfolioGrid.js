@@ -1,8 +1,10 @@
 ﻿import { useState } from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false)
+  const [clickedItem, setClickedItem] = useState(null)
+  const router = useRouter()
 
   const portfolioItems = [
     { id: 'cubecraft', title: 'CubeCraft Network', description: t('portfolio-cubecraft') },
@@ -15,20 +17,30 @@ export default function PortfolioGrid({ t }) {
 
   const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden)
 
+  const handleCardClick = (id) => {
+    if (id) {
+      setClickedItem(id)
+      setTimeout(() => {
+        router.push(`/article?id=${id}`)
+      }, 300)
+    }
+  }
+
   return (
     <section id="section4" className="section">
       <div className="content">
         <h2>{t('section4-title')}</h2>
         <div className="portfolio-grid">
           {visibleItems.map((item, index) => (
-            <div key={index} className="portfolio-item">
+            <div
+              key={index}
+              className={`portfolio-item ${item.id === clickedItem ? 'clicked' : ''}`}
+              data-article-id={item.id}
+              onClick={() => handleCardClick(item.id)}
+              style={{ cursor: item.id ? 'pointer' : 'default' }}
+            >
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              {item.id && (
-                <Link href={`/article?id=${item.id}`}>
-                  <a target="_blank">{t('portfolio-read-more')}</a>
-                </Link>
-              )}
             </div>
           ))}
         </div>
@@ -36,7 +48,7 @@ export default function PortfolioGrid({ t }) {
           {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
         </button>
       </div>
-      <div id="cube4" class="cube"></div>
+      <div id="cube4" className="cube"></div>
     </section>
   )
 }
