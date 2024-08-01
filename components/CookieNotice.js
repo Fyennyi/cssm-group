@@ -22,7 +22,7 @@ export default function CookieNotice({ t }) {
     <div id="cookie-notice">
       <div>
         <p>{t('cookie-notice-text')}</p>
-        <button onClick={acceptCookies}>{t('cookie-notice-accept')}</button>
+        <button onClick={acceptCookies} id="accept-cookies">{t('cookie-notice-accept')}</button>
       </div>
     </div>
   )
