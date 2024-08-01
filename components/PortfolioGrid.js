@@ -32,7 +32,7 @@ export default function PortfolioGrid({ t }) {
             </div>
           ))}
         </div>
-        <button onClick={() => setExpanded(!expanded)}>
+        <button onClick={() => setExpanded(!expanded)} className="btn">
           {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
         </button>
       </div>
