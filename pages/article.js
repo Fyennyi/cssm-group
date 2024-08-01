@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import { useTranslation } from '../lib/translations'
+import Cookies from 'js-cookie'
 
 const articles = [
   {
@@ -91,8 +92,8 @@ export default function Article() {
   const router = useRouter()
   const { id } = router.query
   const [article, setArticle] = useState(null)
-  const [lang, setLang] = useState('uk')
-  const { t } = useTranslation('uk')
+  const [lang, setLang] = useState(Cookies.get('language') || 'uk')
+  const { t } = useTranslation(lang)
 
   useEffect(() => {
     if (id) {
@@ -104,6 +105,9 @@ export default function Article() {
   if (!article) {
     return (
       <Layout lang={lang} setLang={setLang} t={t}>
+        <Head>
+          <title>{t('site-title')}</title>
+        </Head>
         <div className="error-container">
           <h1 className="error-title">{t('article-error-title')}</h1>
           <p className="error-message">{t('article-error-message')}</p>
@@ -116,7 +120,7 @@ export default function Article() {
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <Head>
-        <title>{`${article.title} — Fyennyi Digital`}</title>
+        <title>{article.title} — {t('site-title')}</title>
       </Head>
       <div id="article-container" className="article-container">
         <header className="article-header">

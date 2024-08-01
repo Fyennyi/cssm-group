@@ -5,17 +5,17 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PortfolioGrid from '../components/PortfolioGrid'
 import { useTranslation } from '../lib/translations'
+import Cookies from 'js-cookie'
 
 export default function Home() {
-  const [lang, setLang] = useState('uk')
+  const [lang, setLang] = useState(Cookies.get('language') || 'uk')
   const { t } = useTranslation(lang)
 
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <div className="container">
         <Head>
-          <title>CSSM Group</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>{t('site-title')}</title>
         </Head>
 
         <main>
@@ -26,7 +26,7 @@ export default function Home() {
               <p>{t('section1-subtitle')}</p>
               <a href="#section2" className="btn">{t('section1-button')}</a>
             </div>
-            <div id="cube1" class="cube"></div>
+            <div id="cube1" className="cube"></div>
           </section>
 
           <section id="section2" className="section">
@@ -34,7 +34,7 @@ export default function Home() {
               <h2>{t('section2-title')}</h2>
               <p>{t('section2-content')}</p>
             </div>
-            <div id="cube2" class="cube"></div>
+            <div id="cube2" className="cube"></div>
           </section>
 
           <section id="section3" className="section">
@@ -47,7 +47,7 @@ export default function Home() {
               </ul>
               <a href="#section5" className="btn">{t('section3-button')}</a>
             </div>
-            <div id="cube3" class="cube"></div>
+            <div id="cube3" className="cube"></div>
           </section>
 
           <PortfolioGrid t={t} />
@@ -58,7 +58,7 @@ export default function Home() {
               <p>{t('section5-content')}</p>
               <a href="#" className="btn">{t('section5-button')}</a>
             </div>
-            <div id="cube5" class="cube"></div>
+            <div id="cube5" className="cube"></div>
           </section>
         </main>
 
