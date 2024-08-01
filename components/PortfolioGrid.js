@@ -16,7 +16,7 @@ export default function PortfolioGrid({ t }) {
   const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden)
 
   return (
-    <section id="section4">
+    <section id="section4" className="section">
       <div className="content">
         <h2>{t('section4-title')}</h2>
         <div className="portfolio-grid">
