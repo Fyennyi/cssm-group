@@ -88,9 +88,18 @@ const articles = [
   }
 ]
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const paths = articles.map(article => ({
+    params: { id: article.id }
+  }))
+
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
   const { id } = params
   const article = articles.find(a => a.id === id) || null
+
   return {
     props: {
       article
