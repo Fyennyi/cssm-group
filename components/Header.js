@@ -32,13 +32,13 @@ export default function Header({ lang, setLang }) {
   }, []);
 
   return (
-    <div className="language-switcher">
+    <div className="languageSwitcher">
       <div className="dropdown" ref={dropdownRef}>
-        <button onClick={() => setShowDropdown(prev => !prev)} className="main-button">
-          {lang ? lang.toUpperCase() : 'LANG'} {/* Додано перевірку */}
+        <button onClick={() => setShowDropdown(prev => !prev)} className="mainButton">
+          {lang ? lang.toUpperCase() : 'LANG'}
         </button>
         {showDropdown && (
-          <div className={`dropdown-content ${showDropdown ? 'show' : ''}`} id="dropdown-content">
+          <div className={`dropdownContent ${showDropdown ? 'show' : ''}`} id="dropdownContent">
             <button onClick={() => changeLanguage('uk')}>UK</button>
             <button onClick={() => changeLanguage('en')}>EN</button>
           </div>

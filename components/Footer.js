@@ -1,20 +1,20 @@
-﻿import Link from 'next/link'
+﻿import Link from 'next/link';
 
 export default function Footer({ t }) {
   return (
     <footer>
-      <div className="footer-section">
+      <div className="footerSection">
         <h3>{t('site-title')}</h3>
         <p>{t('footer-description')}</p>
       </div>
-      <div className="footer-section">
+      <div className="footerSection">
         <h3>{t('footer-contacts')}</h3>
         <p>{t('footer-email')}</p>
         <p>{t('footer-phone')}</p>
       </div>
-      <div className="footer-section">
+      <div className="footerSection">
         <h3>{t('footer-follow')}</h3>
-        <div className="social-icons">
+        <div className="socialIcons">
           <Link href="https://www.facebook.com/Fyennyi">📘</Link>
           <Link href="https://www.twitter.com/Fyennyi">🐦</Link>
           <Link href="https://www.instagram.com/fyennyi">📷</Link>
@@ -25,5 +25,5 @@ export default function Footer({ t }) {
         {t('footer-credit')} <span onClick={() => window.open('https://www.facebook.com/incolor.webstudio', '_blank')}>InColor Studios</span>
       </div>
     </footer>
-  )
+  );
 }

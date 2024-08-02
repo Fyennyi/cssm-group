@@ -1,8 +1,8 @@
-﻿import { useState } from 'react'
+﻿import { useState } from 'react';
 
 export default function PortfolioGrid({ t }) {
-  const [expanded, setExpanded] = useState(false)
-  const [clickedItem, setClickedItem] = useState(null)
+  const [expanded, setExpanded] = useState(false);
+  const [clickedItem, setClickedItem] = useState(null);
 
   const portfolioItems = [
     { id: 'cubecraft', title: 'CubeCraft Network', description: t('portfolio-cubecraft') },
@@ -11,29 +11,29 @@ export default function PortfolioGrid({ t }) {
     { title: 'EcoVille', description: t('portfolio-ecoville') },
     { title: 'SkyBlock Paradise', description: t('portfolio-skyblock'), hidden: true },
     { title: 'MineRPG', description: t('portfolio-minerpg'), hidden: true },
-  ]
+  ];
 
-  const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden)
+  const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden);
 
   const handleCardClick = (id) => {
     if (id) {
-      setClickedItem(id)
+      setClickedItem(id);
       setTimeout(() => {
-        setClickedItem(null)
-      }, 300)
-      window.open(`/article?id=${id}`, '_blank')
+        setClickedItem(null);
+      }, 300);
+      window.open(`/article/${id}`, '_blank');
     }
-  }
+  };
 
   return (
     <section id="section4" className="section">
       <div className="content">
         <h2>{t('section4-title')}</h2>
-        <div className="portfolio-grid">
+        <div className="portfolioGrid">
           {visibleItems.map((item, index) => (
             <div
               key={index}
-              className={`portfolio-item ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
+              className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
               data-article-id={item.id}
               onClick={() => handleCardClick(item.id)}
             >
@@ -48,5 +48,5 @@ export default function PortfolioGrid({ t }) {
       </div>
       <div id="cube4" className="cube"></div>
     </section>
-  )
+  );
 }

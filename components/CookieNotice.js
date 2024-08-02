@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
+import styles from '../styles/cookie.module.css'
 
 export default function CookieNotice({ t }) {
   const [showNotice, setShowNotice] = useState(false)
@@ -19,10 +20,10 @@ export default function CookieNotice({ t }) {
   if (!showNotice) return null
 
   return (
-    <div id="cookie-notice">
-      <div className="cookie-container">
-        <p>{t('cookie-notice-text')}</p>
-        <button onClick={acceptCookies} id="accept-cookies">{t('cookie-notice-accept')}</button>
+    <div className={styles.cookieNotice}>
+      <div className={styles.cookieContainer}>
+        <p className={styles.cookieText}>{t('cookie-notice-text')}</p>
+        <button onClick={acceptCookies} className={styles.acceptCookiesButton}>{t('cookie-notice-accept')}</button>
       </div>
     </div>
   )
