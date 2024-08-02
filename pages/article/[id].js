@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 import { useTranslation } from '../../lib/translations'
 import Cookies from 'js-cookie'
 
-import('../styles/article.css')
+import('../../styles/article.css')
 
 const articles = [
   {
