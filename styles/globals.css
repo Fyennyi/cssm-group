@@ -72,7 +72,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.language-switcher {
+.languageSwitcher {
     position: fixed;
     right: 20px;
     top: 20px;
@@ -100,25 +100,25 @@ body {
     width: 100%;
 }
 
-.dropdown button.main-button:after {
+.dropdown button.mainButton:after {
     content: '\25BC';
     font-size: 12px;
     margin-left: 10px;
 }
 
-.dropdown-content {
+.dropdownContent {
     display: none;
     position: absolute;
     width: 100%;
     z-index: 1;
 }
 
-.dropdown-content button:hover {
+.dropdownContent button:hover {
     background-color: #ffffff;
     color: #000000;
 }
 
-.dropdown-content.show {
+.dropdownContent.show {
     display: block;
 }
 
@@ -167,7 +167,7 @@ body {
 #section4 { background-color: #f3e5f5; }
 #section5 { background-color: #e8eaf6; }
 
-.portfolio-grid {
+.portfolioGrid {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -175,7 +175,7 @@ body {
     margin-top: 2rem;
 }
 
-.portfolio-item {
+.portfolioItem {
     position: relative;
     background-color: transparent;
     border: 2px solid #000000;
@@ -185,26 +185,26 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.portfolio-item.clickable {
+.portfolioItem.clickable {
     cursor: pointer;
 }
 
-.portfolio-item.clickable:hover {
+.portfolioItem.clickable:hover {
     background-color: #000000;
     color: #ffffff;
 }
 
-.portfolio-item.clickable:active {
+.portfolioItem.clickable:active {
     background-color: #000000;
     color: #ffffff;
 }
 
-.portfolio-item.clicked {
+.portfolioItem.clicked {
     background-color: #000000;
     color: #ffffff;
 }
 
-.portfolio-item h3 {
+.portfolioItem h3 {
     margin-bottom: 0.5rem;
 }
 
@@ -219,12 +219,12 @@ footer {
     scroll-snap-align: start;
 }
 
-.footer-section {
+.footerSection {
     flex: 1;
     min-width: 200px;
 }
 
-.footer-section h3 {
+.footerSection h3 {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }
@@ -250,7 +250,7 @@ footer {
     background-position: 100% 0;
 }
 
-.social-icons a {
+.socialIcons a {
     color: #ffffff;
     font-size: 1.5rem;
     margin-right: 1rem;
@@ -262,41 +262,7 @@ footer {
         padding: 1rem;
     }
 
-    .footer-section {
+    .footerSection {
         width: 100%;
     }
-}
-
-#cookie-notice {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    font-size: 16px;
-    z-index: 9999;
-}
-
-#cookie-notice .cookie-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#cookie-notice p {
-    margin: 0;
-    padding: 0;
-}
-
-#accept-cookies {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
 }

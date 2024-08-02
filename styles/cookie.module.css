@@ -1,0 +1,33 @@
+﻿.cookieNotice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    z-index: 9999;
+}
+
+.cookieContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookieText {
+    margin: 0;
+    padding: 0;
+}
+
+.acceptCookiesButton {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
