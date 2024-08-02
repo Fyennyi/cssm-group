@@ -4,8 +4,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import { useTranslation } from '../../lib/translations'
 import Cookies from 'js-cookie'
-
-import('../../styles/article.css')
+import styles from './article.module.css'
 
 const articles = [
   {
@@ -119,27 +118,27 @@ export default function Article({ article }) {
       <Head>
         <title>{article.title} — {t('site-title')}</title>
       </Head>
-      <div id="article-container" className="article-container">
-        <header className="article-header">
-          <h1 className="article-title">{article.title}</h1>
-          <div className="article-meta">
+      <div id="article-container" className={styles.articleContainer}>
+        <header className={styles.articleHeader}>
+          <h1 className={styles.articleTitle}>{article.title}</h1>
+          <div className={styles.articleMeta}>
             {t('article-published')}: {article.date} | {t('article-author')}: {article.author}
           </div>
         </header>
         
-        <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
+        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: article.content }} />
         
-        <div className="article-categories">
+        <div className={styles.articleCategories}>
           {article.categories.map((category, index) => (
-            <span key={index} className="category-tag">{category}</span>
+            <span key={index} className={styles.categoryTag}>{category}</span>
           ))}
         </div>
         
-        <div className="related-articles">
+        <div className={styles.relatedArticles}>
           <h3>{t('article-related-projects')}</h3>
-          <div className="article-slider">
+          <div className={styles.articleSlider}>
             {article.relatedProjects.map((project, index) => (
-              <div key={index} className="slider-item">
+              <div key={index} className={styles.sliderItem}>
                 <img src="/api/placeholder/250/150" alt={project.title} />
                 <h4>{project.title}</h4>
                 <p>{project.description}</p>
