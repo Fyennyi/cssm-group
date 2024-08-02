@@ -31,6 +31,12 @@
     "footer-phone": "Телефон: +380 96 393 6694",
     "footer-follow": "Слідкуйте за нами",
     "footer-credit": "З любов’ю створено в",
+    "article-published": "Опубліковано: {date}",
+    "article-author": "Автор: {author}",
+    "article-related-projects": "Схожі проєкти",
+    "article-error-title": Ой! Щось пішло не так",
+    "article-error-message": "На жаль, ми не змогли знайти статтю, яку ви шукаєте. Можливо, ви перейшли за неправильним посиланням або стаття була видалена.",
+    "article-error-button": "Повернутися на головну",
     "cookie-notice-text": "ΜИ ВИКОРИСТОВУЄМО COOKIE. ПРИЙМАЄТЕ?",
     "cookie-notice-accept": "ТАК"
 }

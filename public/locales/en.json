@@ -31,6 +31,12 @@
     "footer-phone": "Phone: +380 96 393 6694",
     "footer-follow": "Follow us",
     "footer-credit": "Created with love by",
+    "article-published": "Published: {date}",
+    "article-author": "Author: {author}",
+    "article-related-projects": "Related Projects",
+    "article-error-title": "Oops! Something went wrong",
+    "article-error-message": "Unfortunately, we couldn't find the article you're looking for. It might be that you followed an incorrect link or the article has been removed.",
+    "article-error-button": "Return to Home",
     "cookie-notice-text": "WE USE COOKIES. ACCEPT?",
     "cookie-notice-accept": "YES"
 }
