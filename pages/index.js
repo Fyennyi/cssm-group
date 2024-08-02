@@ -11,6 +11,25 @@ export default function Home() {
   const [lang, setLang] = useState(Cookies.get('language') || 'uk')
   const { t } = useTranslation(lang)
 
+  useEffect(() => {
+    const smoothScroll = (e) => {
+      e.preventDefault();
+      document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', smoothScroll);
+    });
+
+    return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', smoothScroll);
+      });
+    };
+  }, []);
+
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <div className="container">
