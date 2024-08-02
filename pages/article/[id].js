@@ -122,7 +122,7 @@ export default function Article({ article }) {
         <header className={styles.articleHeader}>
           <h1 className={styles.articleTitle}>{article.title}</h1>
           <div className={styles.articleMeta}>
-            {t('article-published')}: {article.date} | {t('article-author')}: {article.author}
+            {t('article-published', { date: article.date })} | {t('article-author', { author: article.author })}
           </div>
         </header>
         
