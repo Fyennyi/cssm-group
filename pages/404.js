@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import { useTranslation } from '../lib/translations';
 import Cookies from 'js-cookie';
-import styles from './error.module.css';
+import styles from '../styles/error.module.css';
 
 export default function Custom404() {
   const router = useRouter();
