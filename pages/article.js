@@ -88,19 +88,20 @@ const articles = [
   }
 ]
 
-export default function Article() {
+export async function getServerSideProps({ params }) {
+  const { id } = params
+  const article = articles.find(a => a.id === id) || null
+  return {
+    props: {
+      article
+    }
+  }
+}
+
+export default function Article({ article }) {
   const router = useRouter()
-  const { id } = router.query
-  const [article, setArticle] = useState(null)
   const [lang, setLang] = useState(Cookies.get('language') || 'uk')
   const { t } = useTranslation(lang)
-
-  useEffect(() => {
-    if (id) {
-      const foundArticle = articles.find(a => a.id === id)
-      setArticle(foundArticle || null)
-    }
-  }, [id])
 
   if (!article) {
     return (
