@@ -1,4 +1,5 @@
-﻿import { useRouter } from 'next/router';
+﻿import { useState } from 'react'
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import { useTranslation } from '../lib/translations';
