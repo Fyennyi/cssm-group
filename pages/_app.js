@@ -3,12 +3,6 @@
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
-  if (router.pathname.startsWith('/article/')) {
-    import('../styles/article.css')
-  } else {
-    import('../styles/globals.css')
-  }
-
   return <Component {...pageProps} />
 }
 
