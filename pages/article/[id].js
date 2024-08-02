@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import { useTranslation } from '../../lib/translations'
 import Cookies from 'js-cookie'
-import styles from './article.module.css'
+import styles from '../../styles/article.module.css'
 
 const articles = [
   {
