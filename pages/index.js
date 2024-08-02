@@ -7,8 +7,6 @@ import PortfolioGrid from '../components/PortfolioGrid'
 import { useTranslation } from '../lib/translations'
 import Cookies from 'js-cookie'
 
-import('../styles/globals.css')
-
 export default function Home() {
   const [lang, setLang] = useState(Cookies.get('language') || 'uk')
   const { t } = useTranslation(lang)
