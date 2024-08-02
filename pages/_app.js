@@ -4,7 +4,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   if (router.pathname === '/article') {
-    import('../../styles/article.css')
+    import('../styles/article.css')
   } else {
     import('../styles/globals.css')
   }
