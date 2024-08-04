@@ -2,6 +2,7 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../../components/Layout'
+import Footer from '../components/Footer'
 import { useTranslation } from '../../lib/translations'
 import Cookies from 'js-cookie'
 import styles from '../../styles/article.module.css'
@@ -147,6 +148,8 @@ export default function Article({ article }) {
           </div>
         </div>
       </div>
+
+      <Footer t={t} />
     </Layout>
   )
 }
