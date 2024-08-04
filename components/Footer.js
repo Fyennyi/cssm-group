@@ -21,7 +21,7 @@ export default function Footer({ t }) {
           <Link href="#">💼</Link>
         </div>
       </div>
-      <div className="credit">
+      <div className="footerSection credit">
         {t('footer-credit')} <span onClick={() => window.open('https://www.facebook.com/incolor.webstudio', '_blank')}>InColor Studios</span>
       </div>
     </footer>
