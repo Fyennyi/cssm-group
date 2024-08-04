@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link';
+import styles from '../styles/footer.module.css'
 
 export default function Footer({ t }) {
   return (
@@ -9,8 +10,8 @@ export default function Footer({ t }) {
       </div>
       <div className="footerSection">
         <h3>{t('footer-contacts')}</h3>
-        <p>{t('footer-email')}</p>
-        <p>{t('footer-phone')}</p>
+        <p>{parse(t('footer-email'))}</p>
+        <p>{parse(t('footer-phone'))}</p>
       </div>
       <div className="footerSection">
         <h3>{t('footer-follow')}</h3>
