@@ -9,17 +9,17 @@
     scroll-snap-align: start;
 }
 
-.footerContainer.contactLink {
+.contactLink {
     color: #ffffff;
     text-decoration: none;
     border-bottom: 1px solid #ffffff;
 }
 
-.footerContainer.contactLink:hover {
+.contactLink:hover {
     border-bottom: 1px solid transparent;
 }
 
-.footerContainer.contactLink:focus {
+.contactLink:focus {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
 }
