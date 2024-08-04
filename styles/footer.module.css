@@ -1,4 +1,4 @@
-﻿footer {
+﻿.footerContainer {
     background-color: #000000;
     color: #ffffff;
     display: flex;
@@ -9,17 +9,17 @@
     scroll-snap-align: start;
 }
 
-footer .contactLink {
+.footerContainer.contactLink {
     color: #ffffff;
     text-decoration: none;
     border-bottom: 1px solid #ffffff;
 }
 
-footer .contactLink:hover {
+.footerContainer.contactLink:hover {
     border-bottom: 1px solid transparent;
 }
 
-footer .contactLink:focus {
+.footerContainer.contactLink:focus {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
 }
