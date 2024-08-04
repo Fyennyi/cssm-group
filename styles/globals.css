@@ -208,60 +208,8 @@ body {
     margin-bottom: 0.5rem;
 }
 
-footer {
-    background-color: #000000;
-    color: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-    padding: 2rem;
-    scroll-snap-align: start;
-}
-
-.footerSection {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footerSection h3 {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-}
-
-.credit {
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-
-.credit span {
-    background: linear-gradient(to right, #ff4081, #ff80ab);
-    background-position: 0% 100%;
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    color: transparent;
-    cursor: pointer;
-    display: inline-block;
-    transition: background-position 0.3s;
-}
-
-.credit span:hover {
-    background-position: 100% 0;
-}
-
-.socialIcons a {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    text-decoration: none;
-}
-
 @media (max-width: 768px) {
     .section {
         padding: 1rem;
-    }
-
-    .footerSection {
-        width: 100%;
     }
 }
