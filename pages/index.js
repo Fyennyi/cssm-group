@@ -12,6 +12,23 @@ export default function Home() {
   const { t } = useTranslation(lang)
 
   useEffect(() => {
+    const adjustContainerHeight = () => {
+      const container = document.querySelector('.container');
+      if (container) {
+        container.style.height = `${window.innerHeight}px`;
+      }
+    };
+
+    window.addEventListener('load', adjustContainerHeight);
+    window.addEventListener('resize', adjustContainerHeight);
+
+    return () => {
+      window.removeEventListener('load', adjustContainerHeight);
+      window.removeEventListener('resize', adjustContainerHeight);
+    };
+  }, []);
+
+  useEffect(() => {
     const smoothScroll = (e) => {
       e.preventDefault();
       document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
