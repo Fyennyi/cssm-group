@@ -75,7 +75,7 @@ export default function Home() {
             <div className="content">
               <h2>{t('section5-title')}</h2>
               <p>{t('section5-content')}</p>
-              <a href="#" className="btn">{t('section5-button')}</a>
+              <a href="mailto:questions@cssm.pp.ua" className="btn">{t('section5-button')}</a>
             </div>
             <div id="cube5" className="cube"></div>
           </section>
