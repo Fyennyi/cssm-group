@@ -20,7 +20,7 @@ export default function Footer({ t }) {
           <Link href="https://www.facebook.com/cssm.group">📘</Link>
           <Link href="https://www.twitter.com/CSSMGroup">🐦</Link>
           <Link href="https://www.instagram.com/cssm.group">📷</Link>
-          <Link href="#">💼</Link>
+          <Link href="https://www.linkedin.com/company/cssmgroup">💼</Link>
         </div>
       </div>
       <div className={`${styles.footerSection} ${styles.credit}`}>
