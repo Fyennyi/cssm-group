@@ -19,11 +19,10 @@ export default function Home() {
       }
     };
 
-    window.addEventListener('load', adjustContainerHeight);
+    adjustContainerHeight();
     window.addEventListener('resize', adjustContainerHeight);
 
     return () => {
-      window.removeEventListener('load', adjustContainerHeight);
       window.removeEventListener('resize', adjustContainerHeight);
     };
   }, []);
