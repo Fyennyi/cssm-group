@@ -19,8 +19,9 @@ body {
 
 .container {
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .section {
@@ -28,11 +29,12 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 2rem;
     position: relative;
-    scroll-snap-align: start;
     width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .content {
