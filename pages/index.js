@@ -75,15 +75,15 @@ export default function Home() {
           <section id="section3" className="section">
             <div className="content">
               <h2>{t('section3-title')}</h2>
-              <div className="team-grid">
-                <div className="team-member">
-                  <img src="/img/member1.png" alt="{t('team-member1-name')}" />
+              <div className="teamGrid">
+                <div className="teamMember">
+                  <img src="/img/member1.png" alt={t('team-member1-name')} />
                   <h3>{t('team-member1-name')}</h3>
                   <p>{t('team-member1-position')}</p>
                   <p>{t('team-member1-description')}</p>
                 </div>
-                <div className="team-member">
-                  <img src="/img/member2.png" alt="{t('team-member2-name')}" />
+                <div className="teamMember">
+                  <img src="/img/member2.png" alt={t('team-member2-name')} />
                   <h3>{t('team-member2-name')}</h3>
                   <p>{t('team-member2-position')}</p>
                   <p>{t('team-member2-description')}</p>
