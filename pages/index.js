@@ -75,25 +75,54 @@ export default function Home() {
           <section id="section3" className="section">
             <div className="content">
               <h2>{t('section3-title')}</h2>
-              <ul>
-                {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
-                  <li key={index}>{t(`section3-${item}`)}</li>
-                ))}
-              </ul>
-              <a href="#section5" className="btn">{t('section3-button')}</a>
+              <div className="team-grid">
+                <div className="team-member">
+                  <img src="/img/member1.png" alt="{t('team-member1-name')}" />
+                  <h3>{t('team-member1-name')}</h3>
+                  <p>{t('team-member1-position')}</p>
+                  <p>{t('team-member1-description')}</p>
+                </div>
+                <div className="team-member">
+                  <img src="/img/member2.png" alt="{t('team-member2-name')}" />
+                  <h3>{t('team-member2-name')}</h3>
+                  <p>{t('team-member2-position')}</p>
+                  <p>{t('team-member2-description')}</p>
+                </div>
+              </div>
             </div>
             <div id="cube3" className="cube"></div>
           </section>
 
+          <section id="section4" className="section">
+            <div className="content">
+              <h2>{t('section4-title')}</h2>
+              <ul>
+                {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
+                  <li key={index}>{t(`section4-${item}`)}</li>
+                ))}
+              </ul>
+              <a href="#section6" className="btn">{t('section4-button')}</a>
+            </div>
+            <div id="cube4" className="cube"></div>
+          </section>
+
           <PortfolioGrid t={t} />
 
-          <section id="section5" className="section">
+          <section id="section6" className="section">
             <div className="content">
-              <h2>{t('section5-title')}</h2>
-              <p>{t('section5-content')}</p>
-              <a href="mailto:questions@cssm.pp.ua" className="btn">{t('section5-button')}</a>
+              <h2>{t('section6-title')}</h2>
+              <p>{t('section6-content')}</p>
+              <form id="contactForm" className="contactForm">
+                <label htmlFor="name">{t('form-name-label')}</label>
+                <input type="text" id="name" name="name" required />
+                <label htmlFor="email">{t('form-email-label')}</label>
+                <input type="email" id="email" name="email" required />
+                <label htmlFor="message">{t('form-message-label')}</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit" className="btn">{t('form-submit-button')}</button>
+              </form>
             </div>
-            <div id="cube5" className="cube"></div>
+            <div id="cube6" className="cube"></div>
           </section>
         </main>
 
