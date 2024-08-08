@@ -26,9 +26,9 @@ export default function PortfolioGrid({ t }) {
   };
 
   return (
-    <section id="section4" className="section">
+    <section id="section5" className="section">
       <div className="content">
-        <h2>{t('section4-title')}</h2>
+        <h2>{t('section5-title')}</h2>
         <div className="portfolioGrid">
           {visibleItems.map((item, index) => (
             <div
@@ -46,7 +46,7 @@ export default function PortfolioGrid({ t }) {
           {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
         </button>
       </div>
-      <div id="cube4" className="cube"></div>
+      <div id="cube5" className="cube"></div>
     </section>
   );
 }
