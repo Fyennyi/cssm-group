@@ -46,6 +46,18 @@ export default function Home() {
     };
   }, []);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
+
+    const mailtoLink = `mailto:questions@cssm.pp.ua?subject=New Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
+
+    window.location.href = mailtoLink;
+  }
+
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <div className="container">
