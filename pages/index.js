@@ -56,7 +56,7 @@ export default function Home() {
     const mailtoLink = `mailto:questions@cssm.pp.ua?subject=New Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
 
     window.location.href = mailtoLink;
-  }
+  };
 
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="content">
               <h2>{t('section6-title')}</h2>
               <p>{t('section6-content')}</p>
-              <form id="contactForm" className="contactForm">
+              <form className="contactForm" onSubmit={handleSubmit}>
                 <label htmlFor="name">{t('form-name-label')}</label>
                 <input type="text" id="name" name="name" required />
                 <label htmlFor="email">{t('form-email-label')}</label>
