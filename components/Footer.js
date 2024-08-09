@@ -13,6 +13,7 @@ export default function Footer({ t }) {
         <h3>{t('footer-contacts')}</h3>
         <p>{parse(t('footer-email').replace(/class='contactLink'/g, `class='${styles.contactLink}'`))}</p>
         <p>{parse(t('footer-phone').replace(/class='contactLink'/g, `class='${styles.contactLink}'`))}</p>
+        <p>{t('footer-address')}</p>
       </div>
       <div className={styles.footerSection}>
         <h3>{t('footer-follow')}</h3>
