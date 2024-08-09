@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -89,13 +90,25 @@ export default function Home() {
               <h2>{t('section3-title')}</h2>
               <div className="teamGrid">
                 <div className="teamMember">
-                  <img src="/img/member1.png" alt={t('team-member1-name')} />
+                  <Image
+                    src="/img/member1.webp"
+                    alt={t('team-member1-name')}
+                    width={200}
+                    height={200}
+                    placeholder="blur"
+                  />
                   <h3>{t('team-member1-name')}</h3>
                   <p>{t('team-member1-position')}</p>
                   <p>{t('team-member1-description')}</p>
                 </div>
                 <div className="teamMember">
-                  <img src="/img/member2.png" alt={t('team-member2-name')} />
+                  <Image
+                    src="/img/member2.webp"
+                    alt={t('team-member2-name')}
+                    width={200}
+                    height={200}
+                    placeholder="blur"
+                  />
                   <h3>{t('team-member2-name')}</h3>
                   <p>{t('team-member2-position')}</p>
                   <p>{t('team-member2-description')}</p>
