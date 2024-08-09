@@ -1,6 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -206,10 +204,6 @@ body {
 }
 
 .teamMember img {
-    width: 200px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
     border: 2px solid black;
     margin-bottom: 1rem;
 }
