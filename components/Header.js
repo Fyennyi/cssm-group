@@ -8,6 +8,7 @@ export default function Header({ lang, setLang }) {
   const changeLanguage = (newLang) => {
     setLang(newLang);
     Cookies.set('language', newLang);
+    document.documentElement.lang = newLang;
     setShowDropdown(false);
   };
 
