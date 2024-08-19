@@ -17,10 +17,8 @@ export default function Home() {
       if (container) {
         container.style.height = `${window.innerHeight}px`;
 
-        if (event && (event.type === 'focus' || event.type === 'blur')) {
-          if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
-            container.style.height = `${window.visualViewport.height}px`;
-          }
+        if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
+          container.style.height = `${window.visualViewport.height}px`;
         }
       }
     };
