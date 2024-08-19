@@ -12,30 +12,6 @@ export default function Home() {
   const { t } = useTranslation(lang)
 
   useEffect(() => {
-    const adjustContainerHeight = () => {
-      const container = document.querySelector('.container');
-      if (container) {
-        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-        container.style.height = `${height}px`;
-      }
-    };
-
-    adjustContainerHeight();
-
-    window.addEventListener('resize', adjustContainerHeight);
-    window.addEventListener('focus', adjustContainerHeight);
-    window.addEventListener('blur', adjustContainerHeight);
-    window.addEventListener('scroll', adjustContainerHeight);
-
-    return () => {
-      window.removeEventListener('resize', adjustContainerHeight);
-      window.removeEventListener('focus', adjustContainerHeight);
-      window.removeEventListener('blur', adjustContainerHeight);
-      window.removeEventListener('scroll', adjustContainerHeight);
-    };
-  }, []);
-
-  useEffect(() => {
     const smoothScroll = (e) => {
       e.preventDefault();
       document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
