@@ -15,7 +15,7 @@ export default function Home() {
     const adjustContainerHeight = (event) => {
       const container = document.querySelector('.container');
       if (container) {
-        if (event.type === 'focus' || event.type === 'blur') {
+        if (event && (event.type === 'focus' || event.type === 'blur')) {
           window.addEventListener('resize', adjustContainerHeight);
         }
 
