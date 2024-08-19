@@ -12,9 +12,13 @@ export default function Home() {
   const { t } = useTranslation(lang)
 
   useEffect(() => {
-    const adjustContainerHeight = () => {
+    const adjustContainerHeight = (event) => {
       const container = document.querySelector('.container');
       if (container) {
+        if (event.type === 'focus' || event.type === 'blur') {
+          window.addEventListener('resize', adjustContainerHeight);
+        }
+
         container.style.height = `${window.innerHeight}px`;
 
         if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
@@ -23,16 +27,13 @@ export default function Home() {
       }
     };
 
-    adjustContainerHeight();
-
     window.addEventListener('focus', adjustContainerHeight);
     window.addEventListener('blur', adjustContainerHeight);
-    window.addEventListener('scroll', adjustContainerHeight);
 
     return () => {
       window.removeEventListener('focus', adjustContainerHeight);
       window.removeEventListener('blur', adjustContainerHeight);
-      window.removeEventListener('scroll', adjustContainerHeight);
+      window.removeEventListener('resize', adjustContainerHeight);
     };
   }, []);
 
