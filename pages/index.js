@@ -28,14 +28,14 @@ export default function Home() {
     window.addEventListener('resize', adjustContainerHeight);
     window.addEventListener('focus', adjustContainerHeight);
     window.addEventListener('blur', adjustContainerHeight);
-    window.addEventListener('touchstart', adjustContainerHeight);
+    window.addEventListener('scroll', adjustContainerHeight);
 
 
     return () => {
       window.removeEventListener('resize', adjustContainerHeight);
       window.removeEventListener('focus', adjustContainerHeight);
       window.removeEventListener('blur', adjustContainerHeight);
-      window.removeEventListener('touchstart', adjustContainerHeight);
+      window.removeEventListener('scroll', adjustContainerHeight);
     };
   }, []);
 
