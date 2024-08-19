@@ -15,15 +15,21 @@ export default function Home() {
     const adjustContainerHeight = () => {
       const container = document.querySelector('.container');
       if (container) {
-        container.style.height = `${window.innerHeight}px`;
+        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        container.style.height = `${height}px`;
       }
     };
 
     adjustContainerHeight();
+
     window.addEventListener('resize', adjustContainerHeight);
+    window.addEventListener('focus', adjustContainerHeight);
+    window.addEventListener('blur', adjustContainerHeight);
 
     return () => {
       window.removeEventListener('resize', adjustContainerHeight);
+      window.removeEventListener('focus', adjustContainerHeight);
+      window.removeEventListener('blur', adjustContainerHeight);
     };
   }, []);
 
