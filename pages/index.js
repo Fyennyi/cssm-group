@@ -15,8 +15,11 @@ export default function Home() {
     const adjustContainerHeight = () => {
       const container = document.querySelector('.container');
       if (container) {
-        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-        container.style.height = `${window.visualViewport.height}px`;
+        container.style.height = `${window.innerHeight}px`;
+
+        if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
+          container.style.height = `${window.visualViewport.height}px`;
+        }
       }
     };
 
