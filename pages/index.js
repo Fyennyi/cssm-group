@@ -12,30 +12,31 @@ export default function Home() {
   const { t } = useTranslation(lang)
 
   useEffect(() => {
-    const adjustContainerHeight = (event) => {
+    const adjustContainerHeight = () => {
       const container = document.querySelector('.container');
       if (container) {
-        if (event && (event.type === 'focus' || event.type === 'blur')) {
-          window.addEventListener('resize', adjustContainerHeight);
-        }
-
         container.style.height = `${window.innerHeight}px`;
 
-        if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
-          container.style.height = `${window.visualViewport.height}px`;
+        if (event && (event.type === 'focus' || event.type === 'blur')) {
+          if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
+            container.style.height = `${window.visualViewport.height}px`;
+          }
         }
       }
     };
 
     adjustContainerHeight();
 
+    window.addEventListener('resize', adjustContainerHeight);
     window.addEventListener('focus', adjustContainerHeight);
     window.addEventListener('blur', adjustContainerHeight);
+    window.addEventListener('scroll', adjustContainerHeight);
 
     return () => {
+      window.removeEventListener('resize', adjustContainerHeight);
       window.removeEventListener('focus', adjustContainerHeight);
       window.removeEventListener('blur', adjustContainerHeight);
-      window.removeEventListener('resize', adjustContainerHeight);
+      window.removeEventListener('scroll', adjustContainerHeight);
     };
   }, []);
 
