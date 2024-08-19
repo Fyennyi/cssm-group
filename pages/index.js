@@ -27,6 +27,8 @@ export default function Home() {
       }
     };
 
+    adjustContainerHeight();
+
     window.addEventListener('focus', adjustContainerHeight);
     window.addEventListener('blur', adjustContainerHeight);
 
