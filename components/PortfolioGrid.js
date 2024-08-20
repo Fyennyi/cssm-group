@@ -30,7 +30,19 @@ export default function PortfolioGrid({ t }) {
       <div className="content">
         <h2>{t('section5-title')}</h2>
         <div className="portfolioGrid">
-          {visibleItems.map((item, index) => (
+          {articles.filter(item => !item.hidden).map((item, index) => (
+            <div
+              key={index}
+              className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
+              data-article-id={item.id}
+              onClick={() => handleCardClick(item.id)}
+            >
+              <h3>{item.shortTitle}</h3>
+              <p>{renderDescription(item.description)}</p>
+            </div>
+          ))}
+
+          {expanded && articles.filter(item => item.hidden).map((item, index) => (
             <div
               key={index}
               className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
@@ -42,9 +54,12 @@ export default function PortfolioGrid({ t }) {
             </div>
           ))}
         </div>
-        <button onClick={() => setExpanded(!expanded)} className="btn">
-          {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
-        </button>
+
+        {articles.some(item => item.hidden) && (
+          <button onClick={() => setExpanded(!expanded)} className="btn">
+            {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
+          </button>
+        )}
       </div>
       <div id="cube5" className="cube"></div>
     </section>
