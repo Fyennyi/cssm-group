@@ -41,38 +41,32 @@ export default function Home() {
   useEffect(() => {
     const smoothScroll = (e) => {
       e.preventDefault();
-      document.querySelector(e.currentTarget.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+      const target = document.querySelector(e.currentTarget.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     };
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', smoothScroll);
-    });
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach(anchor => anchor.addEventListener('click', smoothScroll));
 
     return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', smoothScroll);
-      });
+      anchors.forEach(anchor => anchor.removeEventListener('click', smoothScroll));
     };
   }, []);
 
   useEffect(() => {
-    const preventZoom = () => {
-      document.addEventListener('touchstart', function (event) {
-        if (event.touches.length > 1) {
-          event.preventDefault();
-        }
-      }, { passive: false });
-
-      document.addEventListener('wheel', function (event) {
-        if (event.ctrlKey) {
-          event.preventDefault();
-        }
-      }, { passive: false });
+    const handleTouchStart = (event) => {
+      if (event.touches.length > 1) {
+        event.preventDefault();
+      }
     };
 
-    preventZoom();
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+    };
   }, []);
 
   const handleSubmit = (event) => {
