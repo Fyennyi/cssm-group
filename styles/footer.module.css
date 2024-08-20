@@ -9,6 +9,16 @@
     scroll-snap-align: start;
 }
 
+.footerSection {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footerSection h3 {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
 .contactLink {
     color: #ffffff;
     text-decoration: none;
@@ -22,16 +32,6 @@
 .contactLink:focus {
     outline: 2px solid #ffffff;
     outline-offset: 2px;
-}
-
-.footerSection {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footerSection h3 {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
 }
 
 .credit {

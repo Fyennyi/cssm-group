@@ -70,6 +70,17 @@ body {
 
 .content ul li {
     margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.content ul li::before {
+    content: "\25A0";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #000000;
+    font-size: 1rem;
 }
 
 .languageSwitcher {
