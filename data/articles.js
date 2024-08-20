@@ -2,6 +2,9 @@
   {
     id: 'cubecraft',
     title: 'CubeCraft Network: Повний ребрендинг',
+    shortTitle: 'CubeCraft Network',
+    description: { key: 'portfolio-cubecraft' },
+    hidden: false,
     date: '15 липня 2023',
     author: 'Команда Fyennyi Digital',
     content: `
@@ -42,6 +45,9 @@
   {
     id: 'morf-editorial',
     title: 'Morf Editorial: Унікальна айдентика для машиніматорів',
+    shortTitle: 'Morf Editorial',
+    description: { key: 'portfolio-morf' },
+    hidden: false,
     date: '20 серпня 2023',
     author: 'Команда Fyennyi Digital',
     content: `
