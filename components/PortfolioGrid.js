@@ -1,17 +1,27 @@
-﻿import { useState } from 'react';
+﻿import { useState, useEffect } from 'react';
 
 export default function PortfolioGrid({ t }) {
+  const [portfolioItems, setPortfolioItems] = useState([]);
   const [expanded, setExpanded] = useState(false);
   const [clickedItem, setClickedItem] = useState(null);
 
-  const portfolioItems = [
-    { id: 'cubecraft', title: 'CubeCraft Network', description: t('portfolio-cubecraft') },
-    { id: 'morf-editorial', title: 'Morf Editorial', description: t('portfolio-morf') },
-    { title: 'BlockWars', description: t('portfolio-blockwars') },
-    { title: 'EcoVille', description: t('portfolio-ecoville') },
-    { title: 'SkyBlock Paradise', description: t('portfolio-skyblock'), hidden: true },
-    { title: 'MineRPG', description: t('portfolio-minerpg'), hidden: true },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('../data/articles.json');
+      const data = await response.json();
+      setPortfolioItems(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const renderDescription = (description) => {
+    if (typeof description === 'string') {
+      return description;
+    } else {
+      return t(description.key);
+    }
+  };
 
   const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden);
 
@@ -37,8 +47,8 @@ export default function PortfolioGrid({ t }) {
               data-article-id={item.id}
               onClick={() => handleCardClick(item.id)}
             >
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3>{item.shortTitle}</h3>
+              <p>{renderDescription(item.description)}</p>
             </div>
           ))}
         </div>
