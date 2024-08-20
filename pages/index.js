@@ -39,9 +39,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const smoothScroll = (e) => {
-      e.preventDefault();
-      const target = document.querySelector(e.currentTarget.getAttribute('href'));
+    const smoothScroll = (event) => {
+      event.preventDefault();
+      const target = document.querySelector(event.currentTarget.getAttribute('href'));
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
@@ -62,10 +62,18 @@ export default function Home() {
       }
     };
 
+    const handleWheel = (event) => {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+    };
+
     document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
       document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('wheel', handleWheel);
     };
   }, []);
 
