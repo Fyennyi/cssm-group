@@ -1,19 +1,9 @@
 ﻿import { useState, useEffect } from 'react';
+import articles from '../data/articles';
 
 export default function PortfolioGrid({ t }) {
-  const [portfolioItems, setPortfolioItems] = useState([]);
   const [expanded, setExpanded] = useState(false);
   const [clickedItem, setClickedItem] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/data/articles.json');
-      const data = await response.json();
-      setPortfolioItems(data);
-    };
-
-    fetchData();
-  }, []);
 
   const renderDescription = (description) => {
     if (typeof description === 'string') {
@@ -23,7 +13,7 @@ export default function PortfolioGrid({ t }) {
     }
   };
 
-  const visibleItems = expanded ? portfolioItems : portfolioItems.filter(item => !item.hidden);
+  const visibleItems = expanded ? articles : articles.filter(item => !item.hidden);
 
   const handleCardClick = (id) => {
     if (id) {
