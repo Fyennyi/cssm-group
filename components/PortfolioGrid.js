@@ -7,7 +7,7 @@ export default function PortfolioGrid({ t }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('../data/articles.json');
+      const response = await fetch('/data/articles.json');
       const data = await response.json();
       setPortfolioItems(data);
     };
