@@ -30,7 +30,6 @@ export default function Home() {
     window.addEventListener('blur', adjustContainerHeight);
     window.addEventListener('scroll', adjustContainerHeight);
 
-
     return () => {
       window.removeEventListener('resize', adjustContainerHeight);
       window.removeEventListener('focus', adjustContainerHeight);
@@ -56,6 +55,24 @@ export default function Home() {
         anchor.removeEventListener('click', smoothScroll);
       });
     };
+  }, []);
+
+  useEffect(() => {
+    const preventZoom = () => {
+      document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+
+      document.addEventListener('wheel', function (event) {
+        if (event.ctrlKey) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+    };
+
+    preventZoom();
   }, []);
 
   const handleSubmit = (event) => {
