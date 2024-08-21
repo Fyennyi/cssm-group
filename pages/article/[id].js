@@ -37,34 +37,38 @@ export default function Article({ article }) {
       <Head>
         <title>{article.title} — {t('site-title')}</title>
       </Head>
-      <div id="article-container" className={styles.articleContainer}>
-        <header className={styles.articleHeader}>
-          <h1 className={styles.articleTitle}>{article.title}</h1>
-          <div className={styles.articleMeta}>
-            {t('article-published', { date: article.date })} | {t('article-author', { author: article.author })}
-          </div>
-        </header>
+      <div className={styles.pageContainer}>
+        <div className={styles.articleContainer}>
+          <header className={styles.articleHeader}>
+            <h1 className={styles.articleTitle}>{article.title}</h1>
+            <div className={styles.articleMeta}>
+              {t('article-published', { date: article.date })} | {t('article-author', { author: article.author })}
+            </div>
+          </header>
 
-        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: article.content }} />
+          <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: article.content }} />
 
-        <div className={styles.articleCategories}>
-          {article.categories.map((category, index) => (
-            <span key={index} className={styles.categoryTag}>{category}</span>
-          ))}
-        </div>
-
-        <div className={styles.relatedArticles}>
-          <h3>{t('article-related-projects')}</h3>
-          <div className={styles.articleSlider}>
-            {article.relatedProjects.map((project, index) => (
-              <div key={index} className={styles.sliderItem}>
-                <img src="/api/placeholder/250/150" alt={project.title} />
-                <h4>{project.title}</h4>
-                <p>{project.description}</p>
-              </div>
+          <div className={styles.articleCategories}>
+            {article.categories.map((category, index) => (
+              <span key={index} className={styles.categoryTag}>{category}</span>
             ))}
           </div>
         </div>
+
+        <aside className={styles.sidebarContainer}>
+          <div className={styles.relatedArticles}>
+            <h3>{t('article-related-projects')}</h3>
+            <div className={styles.articleSlider}>
+              {article.relatedProjects.map((project, index) => (
+                <div key={index} className={styles.sliderItem}>
+                  <img src="/api/placeholder/250/150" alt={project.title} />
+                  <h4>{project.title}</h4>
+                  <p>{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </aside>
       </div>
 
       <Footer t={t} />
