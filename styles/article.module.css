@@ -1,7 +1,20 @@
-﻿.articleContainer {
-    margin: 0 auto;
-    max-width: 800px;
+﻿.pageContainer {
+    display: flex;
+    justify-content: space-between;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.articleContainer {
+    flex: 3;
+    max-width: 800px;
+    padding-right: 2rem;
+}
+
+.sidebarContainer {
+    flex: 1;
+    max-width: 300px;
 }
 
 .articleHeader {
@@ -93,11 +106,6 @@
     text-transform: uppercase;
 }
 
-.relatedArticles {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-}
-
 .relatedArticles h3 {
     font-size: clamp(1.2rem, 3vw, 2rem);
     font-weight: 700;
@@ -144,7 +152,22 @@
 }
 
 @media (max-width: 768px) {
-    .articleContainer {
+    .pageContainer {
+        flex-direction: column;
         padding: 1rem;
+    }
+
+    .articleContainer {
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .sidebarContainer {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .footerSection {
+        width: 100%;
     }
 }
