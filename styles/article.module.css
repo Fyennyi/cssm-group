@@ -66,6 +66,38 @@
     padding-left: 1rem;
 }
 
+.articleContent blockquote footer {
+    font-size: 0.9em;
+    color: #666;
+    text-align: right;
+}
+
+.articleContent code {
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Ubuntu Sans Mono', monospace;
+}
+
+.articleContent figure {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articleContent figcaption {
+    font-style: italic;
+    text-align: center;
+    margin-top: -0.2rem;
+}
+
+.articleContent img {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+
 .articleContent h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
@@ -74,21 +106,25 @@
     text-transform: uppercase;
 }
 
+.articleContent h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+}
+
 .articleContent p {
     font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
+.articleContent p:last-child {
+    margin-bottom: 0;
+}
+
 .articleContent ul, .articleContent ol {
     margin-bottom: 1rem;
     margin-left: 2rem;
-}
-
-.articleImage {
-    height: auto;
-    margin: 1rem 0;
-    width: 100%;
 }
 
 .articleCategories {
