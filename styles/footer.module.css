@@ -15,6 +15,7 @@
 }
 
 .footerSection h3 {
+    line-height: 1.2;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }

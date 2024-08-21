@@ -35,6 +35,7 @@
 .articleTitle {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
+    line-height: 1.3;
     letter-spacing: -1px;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -145,6 +146,7 @@
 .relatedArticles h3 {
     font-size: clamp(1.2rem, 3vw, 2rem);
     font-weight: 700;
+    line-height: 1.2;
     letter-spacing: -1px;
     margin-bottom: 1rem;
     text-transform: uppercase;
