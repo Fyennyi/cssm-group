@@ -1,11 +1,11 @@
 ﻿const articles = [
   {
     id: 'morf-editorial',
-    title: 'Morf Editorial: Унікальна айдентика для машиніматорів',
+    title: 'Morf Editorial: унікальна айдентика для машиніматорів',
     shortTitle: 'Morf Editorial',
     description: { key: 'portfolio-morf' },
     hidden: false,
-    date: '20 серпня 2023',
+    date: '19 травня 2024',
     author: 'Команда CSSM Group',
     content: `
       <p>Ребрендинг для Morf Editorial був спрямований на створення унікальної ідентичності для українського Telegram-каналу, що спеціалізується на машинімах і серіалах. Наша мета полягала в розробці нового логотипа, фірмового стилю та гасла, що відображають характер і потреби бренду.</p>
