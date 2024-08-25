@@ -104,9 +104,9 @@
     `,
     categories: ['Айдентика', 'Брендинг', 'Minecraft', 'Машиніматографія'],
     relatedProjects: [
-      { title: 'CubeCraft Network', description: 'Повний ребрендинг популярної мережі серверів, включаючи новий логотип, вебсайт та ресурспак.' },
-      { title: 'BlockWars', description: 'Створення захоплюючого візуального стилю для PvP-орієнтованого серверу.' },
-      { title: 'SkyBlock Paradise', description: 'Створення яскравого та привабливого бренду для популярного SkyBlock серверу.' }
+      { title: 'NewLand Games', description: 'Розробка логотипа, графічного дизайну та слогана для мультиплеєрного серверного проєкту для Minecraft.', image: 'newland.webp' },
+      { title: 'Hesk', description: 'Переклад українською мовою програмного забезпечення для ведення документації та технічної підтримки.', image: 'hesk.webp' },
+      { title: 'Fyennyi Journal', description: 'Повний ребрендинг медіа, включаючи розробку бізнес‐стратегії, логотипа та фірмового стилю для оглядача мобільної версії Minecraft.', image: 'fyennyi.webp' }
     ]
   }
 ];
