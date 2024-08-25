@@ -61,7 +61,7 @@ export default function Article({ article }) {
             <div className={styles.articleSlider}>
               {article.relatedProjects.map((project, index) => (
                 <div key={index} className={styles.sliderItem}>
-                  <img src="/api/placeholder/250/150" alt={project.title} />
+                  <img src={`/img/${project.image}`} alt={project.title} />
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                 </div>
