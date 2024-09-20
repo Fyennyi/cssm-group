@@ -115,27 +115,6 @@ export default function Home() {
             <div id="cube2" className="cube"></div>
           </section>
 
-          <section id="section3" className="section">
-            <div className="content">
-              <h2>{t('section3-title')}</h2>
-              <div className="teamGrid">
-                <div className="teamMember">
-                  <img src="/img/member1.webp" alt={t('team-member1-name')} loading="lazy" />
-                  <h3>{t('team-member1-name')}</h3>
-                  <p>{t('team-member1-position')}</p>
-                  <p>{t('team-member1-description')}</p>
-                </div>
-                <div className="teamMember">
-                  <img src="/img/member2.webp" alt={t('team-member2-name')} loading="lazy" />
-                  <h3>{t('team-member2-name')}</h3>
-                  <p>{t('team-member2-position')}</p>
-                  <p>{t('team-member2-description')}</p>
-                </div>
-              </div>
-            </div>
-            <div id="cube3" className="cube"></div>
-          </section>
-
           <section id="section4" className="section">
             <div className="content">
               <h2>{t('section4-title')}</h2>
