@@ -13,8 +13,6 @@ export default function PortfolioGrid({ t }) {
     }
   };
 
-  const visibleItems = expanded ? articles : articles.filter(item => !item.hidden);
-
   const handleCardClick = (id) => {
     if (id) {
       setClickedItem(id);
@@ -30,7 +28,7 @@ export default function PortfolioGrid({ t }) {
       <div className="content">
         <h2>{t('section5-title')}</h2>
         <div className="portfolioGrid">
-          {articles.filter(item => !item.hidden).map((item, index) => (
+          {articles.filter(item => !item.hidden && !item.isDraft).map((item, index) => (
             <div
               key={index}
               className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
@@ -42,7 +40,7 @@ export default function PortfolioGrid({ t }) {
             </div>
           ))}
 
-          {expanded && articles.filter(item => item.hidden).map((item, index) => (
+          {expanded && articles.filter(item => item.hidden && !item.isDraft).map((item, index) => (
             <div
               key={index}
               className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
@@ -55,7 +53,7 @@ export default function PortfolioGrid({ t }) {
           ))}
         </div>
 
-        {articles.some(item => item.hidden) && (
+        {articles.some(item => item.hidden && !item.isDraft) && (
           <button onClick={() => setExpanded(!expanded)} className="btn">
             {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
           </button>
