@@ -4,6 +4,7 @@
     title: 'Morf Editorial: унікальна айдентика для машиніматорів',
     shortTitle: 'Morf Editorial',
     description: { key: 'portfolio-morf' },
+    isDraft: true,
     hidden: false,
     date: '19 травня 2024',
     author: 'Команда CSSM Group',
