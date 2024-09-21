@@ -35,7 +35,7 @@ export default function Article({ article }) {
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <Head>
-        <title>{article.title} — {t('site-title')}</title>
+        <title>{article.title}</title>
       </Head>
       <div className={styles.pageContainer}>
         <div className={styles.articleContainer}>
