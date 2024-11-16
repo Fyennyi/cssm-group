@@ -162,13 +162,13 @@
       </figure>
 
       <figure>
-        <img src="/img/newland_games_system_robota_ukrainskoiu.webp" alt="Демонстрація російської версії системи працевлаштування.">
-        <figcaption>Демонстрація російської версії системи працевлаштування.</figcaption>
+        <img src="/img/newland_games_system_robota_ukrainskoiu.webp" alt="Демонстрація українськомовної версії системи працевлаштування.">
+        <figcaption>Демонстрація українськомовної версії системи працевлаштування.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/newland_games_system_robota_rosiiskoiu.webp" alt="Демонстрація російської версії системи працевлаштування.">
-        <figcaption>Демонстрація російської версії системи працевлаштування.</figcaption>
+        <img src="/img/newland_games_system_robota_rosiiskoiu.webp" alt="Демонстрація російськомовної версії системи працевлаштування.">
+        <figcaption>Демонстрація російськомовної версії системи працевлаштування.</figcaption>
       </figure>
 
       <h3>Розробка слогану</h3>
