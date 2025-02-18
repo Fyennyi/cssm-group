@@ -1,6 +1,6 @@
 {
   "build": {
-    "command": "next build",
+    "command": "next build && next export",
     "publicDir": "out"
   }
 }
