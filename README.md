@@ -11,7 +11,7 @@ Welcome to the official website for CSSM. This repository contains the source co
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps:
+To deploy a local copy of a project, follow a few simple steps.
 
 ### Prerequisites
 
