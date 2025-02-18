@@ -1,4 +1,5 @@
-﻿import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head'
 import CookieNotice from './CookieNotice'
 
 export default function Layout({ children, t }) {
