@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react';
+﻿import { React, useState, useEffect } from 'react';
 import articles from '../data/articles';
 
 export default function PortfolioGrid({ t }) {
