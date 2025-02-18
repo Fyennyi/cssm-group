@@ -1,6 +1,6 @@
 # CSSM Official Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cc7a3826-4b52-4b90-8222-9a6515efc24a/deploy-status)](https://app.netlify.com/sites/genuine-cassata-7db5dc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cc7a3826-4b52-4b90-8222-9a6515efc24a/deploy-status)](https://app.netlify.com/sites/cssm-group/deploys)
 
 Welcome to the official website for CSSM. This repository contains the source code for the CSSM website.
 
