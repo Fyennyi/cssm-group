@@ -1,4 +1,5 @@
-﻿import Link from 'next/link';
+import React from 'react';
+import Link from 'next/link';
 import parse from 'html-react-parser';
 import styles from '../styles/footer.module.css';
 
