@@ -1,4 +1,4 @@
-﻿import { React, useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import Cookies from 'js-cookie';
 
 export default function Header({ lang, setLang }) {
