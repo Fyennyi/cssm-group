@@ -15,6 +15,8 @@ To deploy a local copy of a project, follow a few simple steps.
 
 ### Prerequisites
 
+Before you begin, install the following tools:
+
 - Node.js
 - npm
 
