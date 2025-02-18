@@ -1,4 +1,4 @@
-﻿import { React, useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import '../styles/globals.css';
 import Cookies from 'js-cookie';
 
