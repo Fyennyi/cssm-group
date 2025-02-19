@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next export"
   },
   "author": "CSSM Group",
   "license": "ISC",
