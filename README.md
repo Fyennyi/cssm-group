@@ -36,6 +36,7 @@ Before you begin, install the following tools:
 ### Usage
 
 To start the development server:
+
 ```bash
 npm start
 ```
