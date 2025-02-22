@@ -24,11 +24,11 @@ Before you begin, install the following tools:
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo:
    ```bash
    git clone https://github.com/ChernegaSergiy/cssm-group.git
    ```
-2. Install NPM packages
+2. Install NPM packages:
    ```bash
    npm install
    ```
