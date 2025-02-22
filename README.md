@@ -11,6 +11,8 @@ Welcome to the official website for CSSM. This repository contains the source co
 
 ## Getting Started
 
+![Case Article Screenshot](images/screely-1724650115350.png)
+
 To deploy a local copy of a project, follow a few simple steps.
 
 ### Prerequisites
