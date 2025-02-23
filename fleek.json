@@ -1,8 +1,6 @@
 {
-  "build": {
-    "id": "clz9x6ivq0004kjzuxtag3otg",
-    "name": "cssm-group",
-    "buildCommand": "npm run build",
-    "distDir": "out"
-  }
+  "id": "clz9x6ivq0004kjzuxtag3otg",
+  "name": "cssm-group",
+  "distDir": "out",
+  "buildCommand": "npm run build"
 }
