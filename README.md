@@ -26,7 +26,7 @@ Before you begin, install the following tools:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/ChernegaSergiy/cssm-group.git
+   git clone https://github.com/Fyennyi/cssm-group.git
    ```
 2. Install NPM packages:
    ```bash
