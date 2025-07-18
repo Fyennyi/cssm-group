@@ -1,4 +1,4 @@
-﻿const articles = [
+const articles = [
   {
     id: 'morf-editorial',
     title: 'Morf Editorial: унікальна айдентика для машиніматорів',
@@ -12,7 +12,7 @@
       <p>Ребрендинг для Morf Editorial був спрямований на створення унікальної ідентичності для українського Telegram‐каналу, що спеціалізується на машинімах і серіалах. Наша мета полягала в розробці нового логотипа, фірмового стилю та гасла, що відображають характер і потреби бренду.</p>
 
       <figure>
-        <img src="/img/morf_editorial_reklamnyi_shchyt.webp" alt="Імітація оформлення рекламного щита.">
+        <img src="img/morf_editorial_reklamnyi_shchyt.webp" alt="Імітація оформлення рекламного щита.">
         <figcaption>Імітація оформлення рекламного щита.</figcaption>
       </figure>
 
@@ -39,12 +39,12 @@
       <p>Логотип Morf, розроблений нами, є результатом поєднання мінімалізму та символізму. Ми обрали гротескний шрифт NIKEA, що символізує сучасність та високі технології. Головною особливістю логотипа є квадратна форма літери «O», яка асоціюється зі стабільністю та інноваціями.</p>
 
       <figure>
-        <img src="/img/morf_editorial_varyanty_litery_O.webp" alt="Варіанти накреслення літери «О».">
+        <img src="img/morf_editorial_varyanty_litery_O.webp" alt="Варіанти накреслення літери «О».">
         <figcaption>Варіанти накреслення літери «О».</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/morf_editorial_bezpechni_zony_logo.webp" alt="Розрахунок безпечних зон логотипа.">
+        <img src="img/morf_editorial_bezpechni_zony_logo.webp" alt="Розрахунок безпечних зон логотипа.">
         <figcaption>Розрахунок безпечних зон логотипа.</figcaption>
       </figure>
 
@@ -54,7 +54,7 @@
       <p>Фірмовий стиль компанії, виражений у кольоровій палітрі, є надзвичайно важливим елементом брендингу. Ми розробили систему кольорів, де кожен проект отримав власний колір, що дозволило легко ідентифікувати різні напрямки діяльності компанії.</p>
 
       <figure>
-        <img src="/img/morf_editorial_rozvorot_brendbuka.webp" alt="Візуалізація розвороту брендбука.">
+        <img src="img/morf_editorial_rozvorot_brendbuka.webp" alt="Візуалізація розвороту брендбука.">
         <figcaption>Візуалізація розвороту брендбука.</figcaption>
       </figure>
 
@@ -74,7 +74,7 @@
       <p>Гасло «Унікальний погляд на машиніми!» стало яскравим відображенням місії та інноваційного підходу Morf. Воно передає головну ідею бренду — надання нової, нестандартної перспективи у сфері машинім.</p>
 
       <figure>
-        <img src="/img/morf_editorial_vizytka_i_ruchka.webp" alt="Приклад візитки та ручки для співробітників.">
+        <img src="img/morf_editorial_vizytka_i_ruchka.webp" alt="Приклад візитки та ручки для співробітників.">
         <figcaption>Приклад візитки та ручки для співробітників.</figcaption>
       </figure>
 
@@ -85,22 +85,22 @@
       </blockquote>
 
       <figure>
-        <img src="/img/morf_editorial_stanchanyky.webp" alt="Зразок одноразових стаканчиків.">
+        <img src="img/morf_editorial_stanchanyky.webp" alt="Зразок одноразових стаканчиків.">
         <figcaption>Зразок одноразових стаканчиків.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/morf_editorial_bejsbolka.webp" alt="Зразок фірмової бейсболки.">
+        <img src="img/morf_editorial_bejsbolka.webp" alt="Зразок фірмової бейсболки.">
         <figcaption>Зразок фірмової бейсболки.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/morf_editorial_mikrofon.webp" alt="Зразок професійного мікрофона.">
+        <img src="img/morf_editorial_mikrofon.webp" alt="Зразок професійного мікрофона.">
         <figcaption>Зразок професійного мікрофона.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/morf_editorial_poshtovyi_konvert.webp" alt="Приклад дизайну поштового конверта.">
+        <img src="img/morf_editorial_poshtovyi_konvert.webp" alt="Приклад дизайну поштового конверта.">
         <figcaption>Приклад дизайну поштового конверта.</figcaption>
       </figure>
     `,
@@ -123,7 +123,7 @@
       <p>NewLand Games — це результат комплексного ребрендингу, який перетворив проєкт PieMine у нову багатомовну спільноту Minecraft. З самого початку нашої роботи ми стикнулися з викликом створити унікальну візуальну ідентичність, яка б резонувала з гравцями різних культур та країн.</p>
 
       <figure>
-        <img src="/img/newland_games_avatar_gorizontalnyy.webp" alt="Розширена версія аватарки.">
+        <img src="img/newland_games_avatar_gorizontalnyy.webp" alt="Розширена версія аватарки.">
         <figcaption>Розширена версія аватарки NewLand Games.</figcaption>
       </figure>
 
@@ -144,12 +144,12 @@
       <p>Розробка логотипа для NewLand Games була непростою, адже важливо було передати унікальний характер і спільність гри Minecraft. Спершу ми розглядали кілька варіантів дизайну, але лише після експериментів з пікселями знайшли оптимальне рішення. Пікселізація стала ключовим елементом, що символізує Minecraft і створює впізнаваність бренду.</p>
 
       <figure>
-        <img src="/img/newland_games_logotipy_varianty.webp" alt="Логотипи NewLand Games.">
+        <img src="img/newland_games_logotipy_varianty.webp" alt="Логотипи NewLand Games.">
         <figcaption>Логотипи NewLand Games.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/newland_games_logotipy_original.webp" alt="Остаточний варіант логотипа.">
+        <img src="img/newland_games_logotipy_original.webp" alt="Остаточний варіант логотипа.">
         <figcaption>Остаточний варіант логотипа NewLand Games.</figcaption>
       </figure>
 
@@ -157,17 +157,17 @@
       <p>Однією з основних вимог проєкту була багатомовність. Ми інтегрували рішення MultiLanguage у серверне ядро CoffeeCore, що дозволило реалізувати підтримку української, англійської та російської мов з режимом розширення в майбутньому. Це значно розширило можливості спілкування і зробило сервер доступним для гравців з різних країн.</p>
 
       <figure>
-        <img src="/img/newland_games_system_bahatomovnosti.webp" alt="Система багатомовності.">
+        <img src="img/newland_games_system_bahatomovnosti.webp" alt="Система багатомовності.">
         <figcaption>Система багатомовності NewLand Games.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/newland_games_system_robota_ukrainskoiu.webp" alt="Демонстрація українськомовної версії системи працевлаштування.">
+        <img src="img/newland_games_system_robota_ukrainskoiu.webp" alt="Демонстрація українськомовної версії системи працевлаштування.">
         <figcaption>Демонстрація українськомовної версії системи працевлаштування.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/newland_games_system_robota_rosiiskoiu.webp" alt="Демонстрація російськомовної версії системи працевлаштування.">
+        <img src="img/newland_games_system_robota_rosiiskoiu.webp" alt="Демонстрація російськомовної версії системи працевлаштування.">
         <figcaption>Демонстрація російськомовної версії системи працевлаштування.</figcaption>
       </figure>
 
@@ -175,12 +175,12 @@
       <p>Слоган «keep cool» був обраний як відповідь на сучасні тренди та як спосіб передати спокій та впевненість у грі. Цей дещо видозмінений варіант популярної під час пандемії COVID‐19 фрази «keep calm» ідеально підходить для ігрової спільноти, закликаючи гравців зберігати холоднокровність та зосереджуватися на грі.</p>
 
       <figure>
-        <img src="/img/newland_games_oformlennia_sotsialnykh_merezh.webp" alt="Оформлення соціальних мереж.">
+        <img src="img/newland_games_oformlennia_sotsialnykh_merezh.webp" alt="Оформлення соціальних мереж.">
         <figcaption>Базові елементи оформлення соціальних мереж.</figcaption>
       </figure>
 
       <figure>
-        <img src="/img/newland_games_komunikatsiya_sotsialni_merezhi.webp" alt="Комунікація для соцмереж.">
+        <img src="img/newland_games_komunikatsiya_sotsialni_merezhi.webp" alt="Комунікація для соцмереж.">
         <figcaption>Комунікація NewLand Games для соцмереж.</figcaption>
       </figure>
 
