@@ -264,11 +264,6 @@ body {
     color: #ffffff;
 }
 
-.portfolioItem.clickable:active {
-    background-color: #000000;
-    color: #ffffff;
-}
-
 .portfolioItem.clicked {
     background-color: #000000;
     color: #ffffff;
