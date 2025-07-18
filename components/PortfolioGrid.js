@@ -9,10 +9,21 @@ export default function PortfolioGrid({ t }) {
 
   const handleItemClick = (articleId) => {
     setClickedId(articleId);
+
     setTimeout(() => {
       const url = `${router.basePath}/article/${articleId}`;
       window.open(url, '_blank', 'noopener,noreferrer');
-      setClickedId(null);
+
+      const itemElement = document.querySelector(`[data-article-id="${articleId}"]`);
+      if (itemElement) {
+        itemElement.style.display = 'none';
+        setTimeout(() => {
+          itemElement.style.display = '';
+          setClickedId(null);
+        }, 50);
+      } else {
+        setClickedId(null);
+      }
     }, 200);
   };
 
