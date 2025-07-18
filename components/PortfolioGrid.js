@@ -4,11 +4,16 @@ import articles from '../data/articles';
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false);
+  const [clickedItem, setClickedItem] = useState(null);
   const router = useRouter();
 
   const handleItemClick = (articleId) => {
-    const url = `${router.basePath}/article/${articleId}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    setClickedId(articleId);
+    setTimeout(() => {
+      setClickedId(null);
+      const url = `${router.basePath}/article/${articleId}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }, 200);
   };
 
   const renderDescription = (description) => {
@@ -33,7 +38,7 @@ export default function PortfolioGrid({ t }) {
         return (
           <div
             key={index}
-            className="portfolioItem clickable"
+            className={`portfolioItem clickable ${clickedId === item.id ? 'clicked' : ''}`}
             onClick={() => handleItemClick(item.id)}
             data-article-id={item.id}
           >
