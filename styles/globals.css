@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -264,14 +264,23 @@ body {
     color: #ffffff;
 }
 
-.portfolioItem.clickable:active {
-    background-color: #000000;
-    color: #ffffff;
+@keyframes click-effect {
+    0% {
+        background-color: transparent;
+        color: #000000;
+    }
+    50% {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    100% {
+        background-color: transparent;
+        color: #000000;
+    }
 }
 
-.portfolioItem.clicked {
-    background-color: #000000;
-    color: #ffffff;
+.portfolioItem.clickable:active {
+    animation: click-effect 0.2s ease-in-out;
 }
 
 .portfolioItem h3 {
