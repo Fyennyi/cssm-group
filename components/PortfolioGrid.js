@@ -1,9 +1,10 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import articles from '../data/articles';
+
+import Link from 'next/link';
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false);
-  const [clickedItem, setClickedItem] = useState(null);
 
   const renderDescription = (description) => {
     if (typeof description === 'string') {
@@ -13,44 +14,39 @@ export default function PortfolioGrid({ t }) {
     }
   };
 
-  const handleCardClick = (id) => {
-    if (id) {
-      setClickedItem(id);
-      setTimeout(() => {
-        setClickedItem(null);
-      }, 300);
-      window.open(`/article/${id}`, '_blank');
-    }
-  };
+  const portfolioItems = articles
+    .filter(item => !item.isDraft && (!item.hidden || expanded))
+    .map((item, index) => {
+      const content = (
+        <>
+          <h3>{item.shortTitle}</h3>
+          <p>{renderDescription(item.description)}</p>
+        </>
+      );
+
+      if (item.id) {
+        return (
+          <Link key={index} href={`/article/${item.id}`} passHref legacyBehavior>
+            <a className="portfolioItem clickable" target="_blank" rel="noopener noreferrer" data-article-id={item.id}>
+              {content}
+            </a>
+          </Link>
+        );
+      }
+
+      return (
+        <div key={index} className="portfolioItem" data-article-id={item.id}>
+          {content}
+        </div>
+      );
+    });
 
   return (
     <section id="section5" className="section">
       <div className="content">
         <h2>{t('section5-title')}</h2>
         <div className="portfolioGrid">
-          {articles.filter(item => !item.hidden && !item.isDraft).map((item, index) => (
-            <div
-              key={index}
-              className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
-              data-article-id={item.id}
-              onClick={() => handleCardClick(item.id)}
-            >
-              <h3>{item.shortTitle}</h3>
-              <p>{renderDescription(item.description)}</p>
-            </div>
-          ))}
-
-          {expanded && articles.filter(item => item.hidden && !item.isDraft).map((item, index) => (
-            <div
-              key={index}
-              className={`portfolioItem ${item.id ? 'clickable' : ''} ${item.id === clickedItem ? 'clicked' : ''}`}
-              data-article-id={item.id}
-              onClick={() => handleCardClick(item.id)}
-            >
-              <h3>{item.shortTitle}</h3>
-              <p>{renderDescription(item.description)}</p>
-            </div>
-          ))}
+          {portfolioItems}
         </div>
 
         {articles.some(item => item.hidden && !item.isDraft) && (
