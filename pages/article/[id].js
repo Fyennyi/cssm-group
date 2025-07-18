@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../../components/Layout';
@@ -32,6 +32,12 @@ export default function Article({ article }) {
   const [lang, setLang] = useState(Cookies.get('language') || 'uk');
   const { t } = useTranslation(lang);
 
+  const processedContent = useMemo(() => {
+    if (!article || !article.content) return '';
+    // Prepend the basePath to all image sources in the article content
+    return article.content.replace(/src="img\//g, `src="${router.basePath}/img/`);
+  }, [article, router.basePath]);
+
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
       <Head>
@@ -46,7 +52,7 @@ export default function Article({ article }) {
             </div>
           </header>
 
-          <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: article.content }} />
+          <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: processedContent }} />
 
           <div className={styles.articleCategories}>
             {article.categories.map((category, index) => (
@@ -61,7 +67,7 @@ export default function Article({ article }) {
             <div className={styles.articleSlider}>
               {article.relatedProjects.map((project, index) => (
                 <div key={index} className={styles.sliderItem}>
-                  <img src={`/img/${project.image}`} alt={project.title} />
+                  <img src={`${router.basePath}/img/${project.image}`} alt={project.title} />
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                 </div>
