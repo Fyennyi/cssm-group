@@ -265,6 +265,7 @@ body {
 }
 
 .portfolioItem.clicked {
+    pointer-events: none;
     background-color: #000000;
     color: #ffffff;
 }
