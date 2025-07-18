@@ -259,6 +259,11 @@ body {
     cursor: pointer;
 }
 
+.portfolioItem:is(:hover, :active):not(.clicked) {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 .portfolioItem.clicked {
     background-color: #000000;
     color: #ffffff;
