@@ -4,7 +4,7 @@ import articles from '../data/articles';
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false);
-  const [clickedItem, setClickedItem] = useState(null);
+  const [clickedId, setClickedId] = useState(null);
   const router = useRouter();
 
   const handleItemClick = (articleId) => {
