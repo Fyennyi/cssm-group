@@ -7,13 +7,12 @@ export default function PortfolioGrid({ t }) {
   const [clickedId, setClickedId] = useState(null);
   const router = useRouter();
 
-  const handleItemClick = (e, articleId) => {
+  const handleItemClick = (articleId) => {
     setClickedId(articleId);
     setTimeout(() => {
       const url = `${router.basePath}/article/${articleId}`;
       window.open(url, '_blank', 'noopener,noreferrer');
       setClickedId(null);
-      e.currentTarget.blur();
     }, 200);
   };
 
@@ -40,7 +39,7 @@ export default function PortfolioGrid({ t }) {
           <div
             key={index}
             className={`portfolioItem clickable ${clickedId === item.id ? 'clicked' : ''}`}
-            onClick={(e) => handleItemClick(e, item.id)}
+            onClick={() => handleItemClick(item.id)}
             data-article-id={item.id}
           >
             {content}
