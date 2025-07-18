@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import articles from '../data/articles';
-
-import Link from 'next/link';
 
 export default function PortfolioGrid({ t }) {
   const [expanded, setExpanded] = useState(false);
+  const router = useRouter();
+
+  const handleItemClick = (articleId) => {
+    const url = `${router.basePath}/article/${articleId}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const renderDescription = (description) => {
     if (typeof description === 'string') {
@@ -26,11 +31,14 @@ export default function PortfolioGrid({ t }) {
 
       if (item.id) {
         return (
-          <Link key={index} href={`/article/${item.id}`} passHref legacyBehavior>
-            <a className="portfolioItem clickable" target="_blank" rel="noopener noreferrer" data-article-id={item.id}>
-              {content}
-            </a>
-          </Link>
+          <div
+            key={index}
+            className="portfolioItem clickable"
+            onClick={() => handleItemClick(item.id)}
+            data-article-id={item.id}
+          >
+            {content}
+          </div>
         );
       }
 
