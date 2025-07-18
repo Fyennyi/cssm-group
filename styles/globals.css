@@ -259,7 +259,7 @@ body {
     cursor: pointer;
 }
 
-.portfolioItem:hover:not(.clicked) {
+.portfolioItem:active:not(.clicked) {
     background-color: #000000;
     color: #ffffff;
 }
