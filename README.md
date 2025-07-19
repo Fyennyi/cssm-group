@@ -1,7 +1,6 @@
 # CSSM Official Website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cc7a3826-4b52-4b90-8222-9a6515efc24a/deploy-status)](https://app.netlify.com/sites/cssm-group/deploys)
-![Vercel](https://vercelbadge.vercel.app/api/Fyennyi/cssm-group)
 ![GitHub Pages](https://img.shields.io/github/actions/workflow/status/Fyennyi/cssm-group/deploy.yml?logo=github)
 
 Welcome to the official website for CSSM. This repository contains the source code for the CSSM website.
