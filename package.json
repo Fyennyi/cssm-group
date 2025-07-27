@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "author": "CSSM Group",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "html-react-parser": "^5.1.12",
     "js-cookie": "^3.0.5",
