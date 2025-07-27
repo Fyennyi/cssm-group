@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import Footer from '../../components/Footer';
 import { useTranslation } from '../../lib/translations';
@@ -67,7 +68,7 @@ export default function Article({ article }) {
             <div className={styles.articleSlider}>
               {article.relatedProjects.map((project, index) => (
                 <div key={index} className={styles.sliderItem}>
-                  <img src={`${router.basePath}/img/${project.image}`} alt={project.title} />
+                  <Image src={`${router.basePath}/img/${project.image}`} alt={project.title} width={400} height={300} style={{ objectFit: 'cover' }} />
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                 </div>

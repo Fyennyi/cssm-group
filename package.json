@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "author": "CSSM Group",
   "license": "ISC",
@@ -24,6 +25,8 @@
     "@types/node": "^22.0.2",
     "@types/react": "^18.3.3",
     "babel-loader": "^9.2.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.4.4",
     "typescript": "^5.5.4"
   }
 }
