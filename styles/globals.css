@@ -195,6 +195,7 @@ body {
     background-color: transparent;
     border: 2px solid #000000;
     font-size: clamp(0.9rem, 2vw, 1rem);
+    resize: vertical;
 }
 
 .contactForm input:focus, .contactForm textarea:focus {
