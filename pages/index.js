@@ -136,11 +136,11 @@ export default function Home() {
               <p>{t('section6-content')}</p>
               <form className="contactForm" onSubmit={handleSubmit}>
                 <label htmlFor="name">{t('form-name-label')}</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="name" name="name" required autocomplete="name" />
                 <label htmlFor="email">{t('form-email-label')}</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" required autocomplete="email" />
                 <label htmlFor="message">{t('form-message-label')}</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" required autocomplete="off"></textarea>
                 <button type="submit" className="btn">{t('form-submit-button')}</button>
               </form>
             </div>
