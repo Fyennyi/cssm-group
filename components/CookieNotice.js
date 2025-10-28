@@ -2,8 +2,16 @@
 import Cookies from 'js-cookie'
 import styles from '../styles/cookie.module.css'
 
-export default function CookieNotice({ t, hasCookieConsent }) {
-  const [showNotice, setShowNotice] = useState(!hasCookieConsent);
+export default function CookieNotice({ t }) {
+  const [showNotice, setShowNotice] = useState(false);
+
+  useEffect(() => {
+    const consent = Cookies.get('cookieConsent');
+    if (!consent) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setShowNotice(true);
+    }
+  }, []);
 
   const acceptCookies = () => {
     Cookies.set('cookieConsent', 'accepted', { expires: 365 })
