@@ -7,7 +7,7 @@ import PortfolioGrid from '../components/PortfolioGrid'
 import { useTranslation } from '../lib/translations'
 import Cookies from 'js-cookie'
 
-export default function Home() {
+export default function Home({ hasCookieConsent }) {
   const [lang, setLang] = useState(Cookies.get('language') || 'uk')
   const { t } = useTranslation(lang)
 
@@ -90,7 +90,7 @@ export default function Home() {
   };
 
   return (
-    <Layout lang={lang} setLang={setLang} t={t}>
+    <Layout lang={lang} setLang={setLang} t={t} hasCookieConsent={hasCookieConsent}>
       <div className="container">
         <Head>
           <title>{t('site-title')}</title>
@@ -152,4 +152,17 @@ export default function Home() {
       </div>
     </Layout>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { req } = context;
+  const cookies = req.headers.cookie || '';
+  const cookieConsent = cookies.split(';').find(c => c.trim().startsWith('cookieConsent='));
+  const hasCookieConsent = cookieConsent ? true : false;
+
+  return {
+    props: {
+      hasCookieConsent,
+    },
+  };
 }

@@ -2,11 +2,8 @@
 import Cookies from 'js-cookie'
 import styles from '../styles/cookie.module.css'
 
-export default function CookieNotice({ t }) {
-  const [showNotice, setShowNotice] = useState(() => {
-    const consent = Cookies.get('cookieConsent');
-    return !consent;
-  });
+export default function CookieNotice({ t, hasCookieConsent }) {
+  const [showNotice, setShowNotice] = useState(!hasCookieConsent);
 
   const acceptCookies = () => {
     Cookies.set('cookieConsent', 'accepted', { expires: 365 })

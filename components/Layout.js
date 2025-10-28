@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head'
 import CookieNotice from './CookieNotice'
 
-export default function Layout({ children, t }) {
+export default function Layout({ children, t, hasCookieConsent }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Layout({ children, t }) {
 
       {children}
 
-      <CookieNotice t={t} />
+      <CookieNotice t={t} hasCookieConsent={hasCookieConsent} />
     </>
   )
 }
