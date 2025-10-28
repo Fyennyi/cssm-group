@@ -14,7 +14,7 @@
   "dependencies": {
     "html-react-parser": "^5.1.12",
     "js-cookie": "^3.0.5",
-    "next": "^14.2.32",
+    "next": "^16.0.0",
     "react": "^19.2.0",
     "react-dom": "^18.3.1"
   },
