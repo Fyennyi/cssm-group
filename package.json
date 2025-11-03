@@ -27,6 +27,6 @@
     "babel-loader": "^10.0.0",
     "eslint": "^9.38.0",
     "eslint-config-next": "^16.0.1",
-    "typescript": "^5.5.4"
+    "typescript": "^5.9.3"
   }
 }
