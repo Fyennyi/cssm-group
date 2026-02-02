@@ -9,7 +9,12 @@ const BASE_URL = 'https://cssm.pp.ua';
 async function generateSitemap() {
   const smStream = new SitemapStream({ hostname: BASE_URL });
 
-  const routes = ['/', ...articles.filter((article) => !article.hidden).map((article) => `/article/${article.id}`)];
+  const routes = [
+    '/',
+    ...articles
+      .filter((article) => !article.hidden && !article.isDraft)
+      .map((article) => `/article/${article.id}`),
+  ];
 
   for (const url of routes) {
     smStream.write({
