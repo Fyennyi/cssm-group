@@ -1,7 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
+import fs from 'fs';
+import path from 'path';
+import { MDXRemote } from 'next-mdx-remote';
+import { MDXProvider } from '@mdx-js/react';
+import { serialize } from 'next-mdx-remote/serialize';
 import Layout from '../../components/Layout';
 import Footer from '../../components/Footer';
 import { useTranslation } from '../../lib/translations';
@@ -21,23 +26,24 @@ export async function getStaticProps({ params }) {
   const { id } = params;
   const article = articles.find(a => a.id === id) || null;
 
+  const filePath = path.join(process.cwd(), 'content', 'articles', `${id}.mdx`);
+  const source = fs.readFileSync(filePath, 'utf8');
+  const mdxSource = await serialize(source);
+
   return {
     props: {
-      article
+      article,
+      mdxSource
     }
   };
 }
 
-export default function Article({ article }) {
+const mdxComponents = {};
+
+export default function Article({ article, mdxSource }) {
   const router = useRouter();
   const [lang, setLang] = useState(Cookies.get('language') || 'uk');
   const { t } = useTranslation(lang);
-
-  const processedContent = useMemo(() => {
-    if (!article || !article.content) return '';
-    // Prepend the basePath to all image sources in the article content
-    return article.content.replace(/src="img\//g, `src="${router.basePath}/img/`);
-  }, [article, router.basePath]);
 
   return (
     <Layout lang={lang} setLang={setLang} t={t}>
@@ -53,7 +59,11 @@ export default function Article({ article }) {
             </div>
           </header>
 
-          <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: processedContent }} />
+          <div className={styles.articleContent}>
+            <MDXProvider components={mdxComponents}>
+              <MDXRemote {...mdxSource} />
+            </MDXProvider>
+          </div>
 
           <div className={styles.articleCategories}>
             {article.categories.map((category, index) => (
