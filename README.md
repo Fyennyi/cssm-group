@@ -30,7 +30,11 @@ To install the project, follow these steps:
    ```bash
    git clone https://github.com/Fyennyi/cssm-group.git
    ```
-2. Install NPM packages:
+2. Navigate to the project directory:
+   ```bash
+   cd cssm-group
+   ```
+3. Install NPM packages:
    ```bash
    npm install
    ```
