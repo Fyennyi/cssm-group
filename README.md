@@ -24,6 +24,8 @@ Before you begin, install the following tools:
 
 ### Installation
 
+To install the project, follow these steps:
+
 1. Clone the repo:
    ```bash
    git clone https://github.com/Fyennyi/cssm-group.git
