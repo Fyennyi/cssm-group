@@ -36,10 +36,9 @@ export default function PortfolioGrid({ t }) {
 
       if (item.id) {
         return (
-          <div
+          <button
+            type="button"
             key={item.id || index}
-            role="button"
-            tabIndex={0}
             className={`portfolioItem clickable ${clickedId === item.id ? 'clicked' : ''}`}
             onClick={() => handleItemClick(item.id)}
             onKeyDown={(e) => {
@@ -51,7 +50,7 @@ export default function PortfolioGrid({ t }) {
             data-article-id={item.id}
           >
             {content}
-          </div>
+          </button>
         );
       }
 

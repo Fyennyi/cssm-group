@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
@@ -58,10 +58,10 @@ export default function Home({ translations }) {
     };
 
     const anchors = document.querySelectorAll('a[href^="#"]');
-    anchors.forEach(anchor => anchor.addEventListener('click', smoothScroll));
+    anchors.forEach(anchor => { anchor.addEventListener('click', smoothScroll); });
 
     return () => {
-      anchors.forEach(anchor => anchor.removeEventListener('click', smoothScroll));
+      anchors.forEach(anchor => { anchor.removeEventListener('click', smoothScroll); });
     };
   }, []);
 
@@ -129,8 +129,8 @@ export default function Home({ translations }) {
             <div className="content">
               <h2>{t('section4-title')}</h2>
               <ul>
-                {['item1', 'item2', 'item3', 'item4', 'item5'].map((item, index) => (
-                  <li key={index}>{t(`section4-${item}`)}</li>
+                {['item1', 'item2', 'item3', 'item4', 'item5'].map((item) => (
+                  <li key={item}>{t(`section4-${item}`)}</li>
                 ))}
               </ul>
               <a href="#section6" className="btn">{t('section4-button')}</a>
