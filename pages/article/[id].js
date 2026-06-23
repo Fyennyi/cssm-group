@@ -7,9 +7,7 @@ import path from 'path';
 import { MDXRemote } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { serialize } from 'next-mdx-remote/serialize';
-import Layout from '../../components/Layout';
-import Footer from '../../components/Footer';
-import { useTranslation } from '../../lib/translations';
+import { useTranslation, getTranslations } from '../../lib/translations';
 import Cookies from 'js-cookie';
 import styles from '../../styles/article.module.css';
 import articles from '../../data/articles';
@@ -22,7 +20,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, locale }) {
   const { id } = params;
   const article = articles.find(a => a.id === id) || null;
 
@@ -30,20 +28,23 @@ export async function getStaticProps({ params }) {
   const source = fs.readFileSync(filePath, 'utf8');
   const mdxSource = await serialize(source);
 
+  const translations = getTranslations(locale || 'uk');
+
   return {
     props: {
       article,
-      mdxSource
+      mdxSource,
+      translations,
     }
   };
 }
 
 const mdxComponents = {};
 
-export default function Article({ article, mdxSource }) {
+export default function Article({ article, mdxSource, translations }) {
   const router = useRouter();
   const [lang, setLang] = useState(Cookies.get('language') || 'uk');
-  const { t } = useTranslation(lang);
+  const { t } = useTranslation(translations);
 
   return (
     <Layout lang={lang} setLang={setLang} t={t}>

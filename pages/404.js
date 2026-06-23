@@ -2,14 +2,23 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import { useTranslation } from '../lib/translations';
+import { useTranslation, getTranslations } from '../lib/translations';
 import Cookies from 'js-cookie';
 import styles from '../styles/error.module.css';
 
-export default function Custom404() {
+export async function getStaticProps({ locale }) {
+  const translations = getTranslations(locale || 'uk');
+  return {
+    props: {
+      translations,
+    },
+  };
+}
+
+export default function Custom404({ translations }) {
   const router = useRouter();
   const [lang, setLang] = useState(Cookies.get('language') || 'uk');
-  const { t } = useTranslation(lang);
+  const { t } = useTranslation(translations);
 
   return (
     <Layout lang={lang} setLang={setLang} t={t}>

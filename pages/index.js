@@ -4,12 +4,21 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PortfolioGrid from '../components/PortfolioGrid'
-import { useTranslation } from '../lib/translations'
+import { useTranslation, getTranslations } from '../lib/translations'
 import Cookies from 'js-cookie'
 
-export default function Home() {
+export async function getStaticProps({ locale }) {
+  const translations = getTranslations(locale || 'uk');
+  return {
+    props: {
+      translations,
+    },
+  };
+}
+
+export default function Home({ translations }) {
   const [lang, setLang] = useState(Cookies.get('language') || 'uk')
-  const { t } = useTranslation(lang)
+  const { t } = useTranslation(translations)
 
   useEffect(() => {
     const adjustContainerHeight = () => {
