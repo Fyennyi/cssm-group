@@ -23,7 +23,7 @@
     "sitemap": "^9.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
+    "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-react": "^7.29.7",
     "@types/node": "^25.9.3",
