@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import articles from '../data/articles';
 
@@ -37,9 +37,17 @@ export default function PortfolioGrid({ t }) {
       if (item.id) {
         return (
           <div
-            key={index}
+            key={item.id || index}
+            role="button"
+            tabIndex={0}
             className={`portfolioItem clickable ${clickedId === item.id ? 'clicked' : ''}`}
             onClick={() => handleItemClick(item.id)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleItemClick(item.id);
+              }
+            }}
             data-article-id={item.id}
           >
             {content}
@@ -48,7 +56,7 @@ export default function PortfolioGrid({ t }) {
       }
 
       return (
-        <div key={index} className="portfolioItem" data-article-id={item.id}>
+        <div key={item.id || index} className="portfolioItem" data-article-id={item.id}>
           {content}
         </div>
       );
@@ -63,7 +71,7 @@ export default function PortfolioGrid({ t }) {
         </div>
 
         {articles.some(item => item.hidden && !item.isDraft) && (
-          <button onClick={() => setExpanded(!expanded)} className="btn">
+          <button type="button" onClick={() => setExpanded(!expanded)} className="btn">
             {expanded ? t('toggle-portfolio-collapse') : t('toggle-portfolio-view')}
           </button>
         )}

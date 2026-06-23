@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import { MDXRemote } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -70,7 +70,7 @@ export default function Article({ article, mdxSource, translations }) {
 
           <div className={styles.articleCategories}>
             {article.categories.map((category, index) => (
-              <span key={index} className={styles.categoryTag}>{category}</span>
+              <span key={category} className={styles.categoryTag}>{category}</span>
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Article({ article, mdxSource, translations }) {
             <h3>{t('article-related-projects')}</h3>
             <div className={styles.articleSlider}>
               {article.relatedProjects.map((project, index) => (
-                <div key={index} className={styles.sliderItem}>
+                <div key={project.id || project.title} className={styles.sliderItem}>
                   <img src={`${router.basePath}/img/${project.image}`} alt={project.title} width={400} height={300} style={{ objectFit: 'cover', borderRadius: '8px' }} />
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>

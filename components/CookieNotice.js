@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import styles from '../styles/cookie.module.css'
 
@@ -24,7 +24,7 @@ export default function CookieNotice({ t }) {
     <div className={styles.cookieNotice}>
       <div className={styles.cookieContainer}>
         <p className={styles.cookieText}>{t('cookie-notice-text')}</p>
-        <button onClick={acceptCookies} className={styles.acceptCookiesButton}>{t('cookie-notice-accept')}</button>
+        <button type="button" onClick={acceptCookies} className={styles.acceptCookiesButton}>{t('cookie-notice-accept')}</button>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -29,7 +29,7 @@ export default function Custom404({ translations }) {
       <div className={styles.errorContainer}>
         <h1 className={styles.errorTitle}>{t('article-error-title')}</h1>
         <p className={styles.errorMessage}>{t('article-error-message')}</p>
-        <button onClick={() => router.push('/')} className={styles.errorButton}>{t('article-error-button')}</button>
+        <button type="button" onClick={() => router.push('/')} className={styles.errorButton}>{t('article-error-button')}</button>
       </div>
     </Layout>
   );

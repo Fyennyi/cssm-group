@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Link from 'next/link';
 import parse from 'html-react-parser';
 import styles from '../styles/footer.module.css';
@@ -26,7 +26,7 @@ export default function Footer({ t }) {
         </div>
       </div>
       <div className={`${styles.footerSection} ${styles.credit}`}>
-        {t('footer-credit')} <span onClick={() => window.open('https://www.facebook.com/incolor.webstudio', '_blank')}>InColor Studios</span>
+        {t('footer-credit')} <a href="https://www.facebook.com/incolor.webstudio" target="_blank" rel="noopener noreferrer">InColor Studios</a>
       </div>
     </footer>
   );

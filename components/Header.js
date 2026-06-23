@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Cookies from 'js-cookie';
 
 export default function Header({ lang, setLang }) {
@@ -35,13 +35,13 @@ export default function Header({ lang, setLang }) {
   return (
     <div className="languageSwitcher">
       <div className="dropdown" ref={dropdownRef}>
-        <button onClick={() => setShowDropdown(prev => !prev)} className="mainButton">
+        <button type="button" onClick={() => setShowDropdown(prev => !prev)} className="mainButton">
           {lang ? lang.toUpperCase() : 'LANG'}
         </button>
         {showDropdown && (
           <div className={`dropdownContent ${showDropdown ? 'show' : ''}`} id="dropdownContent">
-            <button onClick={() => changeLanguage('uk')}>UK</button>
-            <button onClick={() => changeLanguage('en')}>EN</button>
+            <button type="button" onClick={() => changeLanguage('uk')}>UK</button>
+            <button type="button" onClick={() => changeLanguage('en')}>EN</button>
           </div>
         )}
       </div>
