@@ -4,7 +4,8 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PortfolioGrid from '../components/PortfolioGrid'
-import { useTranslation, getTranslations } from '../lib/translations'
+import { useTranslation } from '../lib/translations'
+import { getTranslations } from '../lib/server-translations'
 import Cookies from 'js-cookie'
 
 export async function getStaticProps({ locale }) {

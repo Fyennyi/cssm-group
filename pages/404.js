@@ -2,7 +2,8 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import { useTranslation, getTranslations } from '../lib/translations';
+import { useTranslation } from '../lib/translations';
+import { getTranslations } from '../lib/server-translations';
 import Cookies from 'js-cookie';
 import styles from '../styles/error.module.css';
 
