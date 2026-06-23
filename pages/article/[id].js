@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { serialize } from 'next-mdx-remote/serialize';
 import Layout from '../../components/Layout';
+import Footer from '../../components/Footer';
 import { useTranslation } from '../../lib/translations';
 import { getTranslations } from '../../lib/server-translations';
 import Cookies from 'js-cookie';
