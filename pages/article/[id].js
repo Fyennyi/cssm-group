@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import ImageImport from 'next/image';
+const NextImage = ImageImport.default || ImageImport;
 import fs from 'node:fs';
 import path from 'node:path';
 import { MDXRemote } from 'next-mdx-remote';
@@ -81,7 +83,7 @@ export default function Article({ article, mdxSource, translations }) {
             <div className={styles.articleSlider}>
               {article.relatedProjects.map((project, _index) => (
                 <div key={project.id || project.title} className={styles.sliderItem}>
-                  <img src={`${router.basePath}/img/${project.image}`} alt={project.title} width={400} height={300} style={{ objectFit: 'cover', borderRadius: '8px' }} />
+                  <NextImage src={`${router.basePath}/img/${project.image}`} alt={project.title} width={400} height={300} style={{ objectFit: 'cover', borderRadius: '8px' }} />
                   <h4>{project.title}</h4>
                   <p>{project.description}</p>
                 </div>
