@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const { SitemapStream, streamToPromise } = require('sitemap');
+import fs from 'fs';
+import path from 'path';
+import { SitemapStream, streamToPromise } from 'sitemap';
 
-const articles = require('../data/articles');
+import articles from '../data/articles.js';
 
 const BASE_URL = 'https://cssm.pp.ua';
 
