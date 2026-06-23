@@ -7,6 +7,7 @@ import path from 'path';
 import { MDXRemote } from 'next-mdx-remote';
 import { MDXProvider } from '@mdx-js/react';
 import { serialize } from 'next-mdx-remote/serialize';
+import Layout from '../../components/Layout';
 import { useTranslation } from '../../lib/translations';
 import { getTranslations } from '../../lib/server-translations';
 import Cookies from 'js-cookie';
