@@ -1,4 +1,4 @@
-﻿.footerContainer {
+.footerContainer {
     background-color: #000000;
     color: #ffffff;
     display: flex;
@@ -47,7 +47,7 @@
     font-size: 0.9rem;
 }
 
-.credit span {
+.credit a {
     background: linear-gradient(to right, #ff4081, #ff80ab);
     background-position: 0% 100%;
     background-size: 200% 100%;
@@ -56,9 +56,10 @@
     cursor: pointer;
     display: inline-block;
     transition: background-position 0.3s;
+    text-decoration: none;
 }
 
-.credit span:hover {
+.credit a:hover {
     background-position: 100% 0;
 }
 
