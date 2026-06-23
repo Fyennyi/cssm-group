@@ -8,7 +8,7 @@
     "dev": "next dev --webpack",
     "build": "npm run generate-sitemap && next build --webpack",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "biome lint .",
     "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "author": "CSSM Group",
