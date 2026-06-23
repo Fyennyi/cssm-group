@@ -14,4 +14,4 @@ const nextConfig = {
   assetPrefix: isProd && repoName ? `/${repoName}/` : '',
 };
 
-module.exports = nextConfig;
+export default nextConfig;
