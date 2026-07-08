@@ -1,32 +1,31 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PortfolioGrid from '../components/PortfolioGrid'
-import { useTranslation } from '../lib/translations'
 import { getTranslations } from '../lib/server-translations'
-import Cookies from 'js-cookie'
+import { useLanguage } from '../contexts/LanguageContext'
 
-export async function getStaticProps({ locale }) {
-  const translations = getTranslations(locale || 'uk');
+export async function getStaticProps() {
+  const ukTranslations = getTranslations('uk');
+  const enTranslations = getTranslations('en');
   return {
     props: {
-      translations,
+      ukTranslations,
+      enTranslations,
     },
   };
 }
 
-export default function Home({ translations }) {
-  const [lang, setLang] = useState(Cookies.get('language') || 'uk')
-  const { t } = useTranslation(translations)
+export default function Home() {
+  const { t } = useLanguage();
 
   useEffect(() => {
     const adjustContainerHeight = () => {
       const container = document.querySelector('.container');
       if (container) {
         container.style.height = `${window.innerHeight}px`;
-
         if (window.visualViewport && window.visualViewport.height < window.innerHeight) {
           container.style.height = `${window.visualViewport.height}px`;
         }
@@ -34,7 +33,6 @@ export default function Home({ translations }) {
     };
 
     adjustContainerHeight();
-
     window.addEventListener('resize', adjustContainerHeight);
     window.addEventListener('focus', adjustContainerHeight);
     window.addEventListener('blur', adjustContainerHeight);
@@ -100,7 +98,7 @@ export default function Home({ translations }) {
   };
 
   return (
-    <Layout lang={lang} setLang={setLang} t={t}>
+    <Layout>
       <div className="container">
         <Head>
           <title>{t('site-title')}</title>
@@ -108,7 +106,7 @@ export default function Home({ translations }) {
 
         <main>
           <section id="section1" className="section">
-            <Header lang={lang} setLang={setLang} t={t} />
+            <Header />
             <div className="content">
               <h1>{t('section1-title')}</h1>
               <p>{t('section1-subtitle')}</p>
@@ -138,7 +136,7 @@ export default function Home({ translations }) {
             <div id="cube4" className="cube"></div>
           </section>
 
-          <PortfolioGrid t={t} />
+          <PortfolioGrid />
 
           <section id="section6" className="section">
             <div className="content">
@@ -158,7 +156,7 @@ export default function Home({ translations }) {
           </section>
         </main>
 
-        <Footer t={t} />
+        <Footer />
       </div>
     </Layout>
   )
