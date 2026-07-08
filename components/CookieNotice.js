@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import styles from '../styles/cookie.module.css'
+import { useLanguage } from '../contexts/LanguageContext'
 
-export default function CookieNotice({ t }) {
+export default function CookieNotice() {
+  const { t } = useLanguage();
   const [showNotice, setShowNotice] = useState(false);
 
   useEffect(() => {
     const consent = Cookies.get('cookieConsent');
     if (!consent) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowNotice(true);
     }
   }, []);
