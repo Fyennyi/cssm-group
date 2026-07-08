@@ -2,19 +2,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import { useLanguage } from '../contexts/LanguageContext';
-import { getTranslations } from '../lib/server-translations';
 import styles from '../styles/error.module.css';
-
-export async function getStaticProps() {
-  const ukTranslations = getTranslations('uk');
-  const enTranslations = getTranslations('en');
-  return {
-    props: {
-      ukTranslations,
-      enTranslations,
-    },
-  };
-}
 
 export default function Custom404() {
   const router = useRouter();
