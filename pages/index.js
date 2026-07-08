@@ -4,19 +4,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PortfolioGrid from '../components/PortfolioGrid'
-import { getTranslations } from '../lib/server-translations'
 import { useLanguage } from '../contexts/LanguageContext'
-
-export async function getStaticProps() {
-  const ukTranslations = getTranslations('uk');
-  const enTranslations = getTranslations('en');
-  return {
-    props: {
-      ukTranslations,
-      enTranslations,
-    },
-  };
-}
 
 export default function Home() {
   const { t } = useLanguage();
