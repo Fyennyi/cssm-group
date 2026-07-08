@@ -5,7 +5,7 @@ const LanguageContext = createContext();
 
 export function LanguageProvider({ children, initialTranslations }) {
   const [lang, setLang] = useState('uk');
-  const [translationsMap, setTranslationsMap] = useState({
+  const [translationsMap, _setTranslationsMap] = useState({
     uk: initialTranslations?.uk || {},
     en: initialTranslations?.en || {}
   });
@@ -26,7 +26,7 @@ export function LanguageProvider({ children, initialTranslations }) {
       setLang(savedLang);
       document.documentElement.setAttribute('lang', savedLang);
     }
-  }, []);
+  }, [translationsMap]);
 
   const changeLanguage = (newLang) => {
     if (!translationsMap[newLang]) return;
