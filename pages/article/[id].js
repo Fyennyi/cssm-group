@@ -10,7 +10,6 @@ import { serialize } from 'next-mdx-remote/serialize';
 import Layout from '../../components/Layout';
 import Footer from '../../components/Footer';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { getTranslations } from '../../lib/server-translations';
 import styles from '../../styles/article.module.css';
 import articles from '../../data/articles';
 
@@ -30,15 +29,10 @@ export async function getStaticProps({ params }) {
   const source = fs.readFileSync(filePath, 'utf8');
   const mdxSource = await serialize(source);
 
-  const ukTranslations = getTranslations('uk');
-  const enTranslations = getTranslations('en');
-
   return {
     props: {
       article,
       mdxSource,
-      ukTranslations,
-      enTranslations,
     }
   };
 }
