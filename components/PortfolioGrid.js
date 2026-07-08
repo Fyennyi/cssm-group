@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import articles from '../data/articles';
+import { useLanguage } from '../contexts/LanguageContext';
 
-export default function PortfolioGrid({ t }) {
+export default function PortfolioGrid() {
+  const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
   const [clickedId, setClickedId] = useState(null);
   const router = useRouter();
