@@ -1,9 +1,10 @@
-
 import Link from 'next/link';
 import parse from 'html-react-parser';
 import styles from '../styles/footer.module.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
-export default function Footer({ t }) {
+export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerSection}>
