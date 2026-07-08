@@ -1,28 +1,27 @@
-import { useState } from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import { useTranslation } from '../lib/translations';
+import { useLanguage } from '../contexts/LanguageContext';
 import { getTranslations } from '../lib/server-translations';
-import Cookies from 'js-cookie';
 import styles from '../styles/error.module.css';
 
-export async function getStaticProps({ locale }) {
-  const translations = getTranslations(locale || 'uk');
+export async function getStaticProps() {
+  const ukTranslations = getTranslations('uk');
+  const enTranslations = getTranslations('en');
   return {
     props: {
-      translations,
+      ukTranslations,
+      enTranslations,
     },
   };
 }
 
-export default function Custom404({ translations }) {
+export default function Custom404() {
   const router = useRouter();
-  const [lang, setLang] = useState(Cookies.get('language') || 'uk');
-  const { t } = useTranslation(translations);
+  const { t } = useLanguage();
 
   return (
-    <Layout lang={lang} setLang={setLang} t={t}>
+    <Layout>
       <Head>
         <title>{t('site-title')}</title>
       </Head>
