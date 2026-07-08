@@ -3,12 +3,9 @@ import Cookies from 'js-cookie';
 
 const LanguageContext = createContext();
 
-export function LanguageProvider({ children, initialTranslations }) {
+export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('uk');
-  const [translationsMap, _setTranslationsMap] = useState({
-    uk: initialTranslations?.uk || {},
-    en: initialTranslations?.en || {}
-  });
+  const [translationsMap, setTranslationsMap] = useState({ uk: {}, en: {} });
 
   const t = (key, variables = {}) => {
     const current = translationsMap[lang] || {};
@@ -21,15 +18,19 @@ export function LanguageProvider({ children, initialTranslations }) {
   };
 
   useEffect(() => {
-    const savedLang = Cookies.get('language');
-    if (savedLang && translationsMap[savedLang]) {
-      setLang(savedLang);
-      document.documentElement.setAttribute('lang', savedLang);
-    }
-  }, [translationsMap]);
+    Promise.all([
+      fetch('/locales/uk.json').then(r => r.json()),
+      fetch('/locales/en.json').then(r => r.json())
+    ]).then(([uk, en]) => {
+      setTranslationsMap({ uk, en });
+      const savedLang = Cookies.get('language');
+      const resolvedLang = savedLang && (savedLang === 'uk' || savedLang === 'en') ? savedLang : 'uk';
+      setLang(resolvedLang);
+      document.documentElement.setAttribute('lang', resolvedLang);
+    });
+  }, []);
 
   const changeLanguage = (newLang) => {
-    if (!translationsMap[newLang]) return;
     setLang(newLang);
     Cookies.set('language', newLang);
     document.documentElement.setAttribute('lang', newLang);
