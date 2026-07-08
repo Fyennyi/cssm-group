@@ -1,11 +1,13 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import ukJson from '../public/locales/uk.json';
+import enJson from '../public/locales/en.json';
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('uk');
-  const [translationsMap, setTranslationsMap] = useState({ uk: {}, en: {} });
+  const [translationsMap, setTranslationsMap] = useState({ uk: ukJson, en: enJson });
 
   const t = (key, variables = {}) => {
     const current = translationsMap[lang] || {};
@@ -18,16 +20,11 @@ export function LanguageProvider({ children }) {
   };
 
   useEffect(() => {
-    Promise.all([
-      fetch('/locales/uk.json').then(r => r.json()),
-      fetch('/locales/en.json').then(r => r.json())
-    ]).then(([uk, en]) => {
-      setTranslationsMap({ uk, en });
-      const savedLang = Cookies.get('language');
-      const resolvedLang = savedLang && (savedLang === 'uk' || savedLang === 'en') ? savedLang : 'uk';
-      setLang(resolvedLang);
-      document.documentElement.setAttribute('lang', resolvedLang);
-    });
+    const savedLang = Cookies.get('language');
+    if (savedLang && (savedLang === 'uk' || savedLang === 'en')) {
+      setLang(savedLang);
+      document.documentElement.setAttribute('lang', savedLang);
+    }
   }, []);
 
   const changeLanguage = (newLang) => {
