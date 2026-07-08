@@ -1,23 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import Cookies from 'js-cookie';
+import { useLanguage } from '../contexts/LanguageContext';
 
-export default function Header({ lang, setLang }) {
+export default function Header() {
+  const { lang, changeLanguage } = useLanguage();
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
-
-  const changeLanguage = (newLang) => {
-    setLang(newLang);
-    Cookies.set('language', newLang);
-    document.documentElement.lang = newLang;
-    setShowDropdown(false);
-  };
-
-  useEffect(() => {
-    const savedLang = Cookies.get('language');
-    if (savedLang) {
-      setLang(savedLang);
-    }
-  }, [setLang]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
