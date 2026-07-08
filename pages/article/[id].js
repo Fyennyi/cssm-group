@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import ImageImport from 'next/image';
@@ -10,9 +9,8 @@ import { MDXProvider } from '@mdx-js/react';
 import { serialize } from 'next-mdx-remote/serialize';
 import Layout from '../../components/Layout';
 import Footer from '../../components/Footer';
-import { useTranslation } from '../../lib/translations';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { getTranslations } from '../../lib/server-translations';
-import Cookies from 'js-cookie';
 import styles from '../../styles/article.module.css';
 import articles from '../../data/articles';
 
@@ -24,7 +22,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({ params }) {
   const { id } = params;
   const article = articles.find(a => a.id === id) || null;
 
@@ -32,26 +30,27 @@ export async function getStaticProps({ params, locale }) {
   const source = fs.readFileSync(filePath, 'utf8');
   const mdxSource = await serialize(source);
 
-  const translations = getTranslations(locale || 'uk');
+  const ukTranslations = getTranslations('uk');
+  const enTranslations = getTranslations('en');
 
   return {
     props: {
       article,
       mdxSource,
-      translations,
+      ukTranslations,
+      enTranslations,
     }
   };
 }
 
 const mdxComponents = {};
 
-export default function Article({ article, mdxSource, translations }) {
+export default function Article({ article, mdxSource }) {
   const router = useRouter();
-  const [lang, setLang] = useState(Cookies.get('language') || 'uk');
-  const { t } = useTranslation(translations);
+  const { t } = useLanguage();
 
   return (
-    <Layout lang={lang} setLang={setLang} t={t}>
+    <Layout>
       <Head>
         <title>{article.title}</title>
       </Head>
@@ -93,7 +92,7 @@ export default function Article({ article, mdxSource, translations }) {
         </aside>
       </div>
 
-      <Footer t={t} />
+      <Footer />
     </Layout>
   );
 }
