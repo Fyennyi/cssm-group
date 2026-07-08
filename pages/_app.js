@@ -3,7 +3,7 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LanguageProvider initialTranslations={pageProps}>
+    <LanguageProvider>
       <Component {...pageProps} />
     </LanguageProvider>
   );
