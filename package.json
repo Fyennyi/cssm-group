@@ -15,7 +15,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
-    "html-react-parser": "^6.1.4",
+    "html-react-parser": "^6.1.5",
     "js-cookie": "^3.0.8",
     "next": "^16.2.10",
     "next-mdx-remote": "^6.0.0",
