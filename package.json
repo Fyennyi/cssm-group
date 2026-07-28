@@ -19,7 +19,7 @@
     "js-cookie": "^3.0.8",
     "next": "^16.2.10",
     "next-mdx-remote": "^6.0.0",
-    "react": "^19.2.6",
+    "react": "^19.2.8",
     "react-dom": "^19.2.7",
     "sitemap": "^9.0.1"
   },
