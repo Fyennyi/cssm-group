@@ -7,7 +7,7 @@ const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('uk');
-  const [translationsMap, setTranslationsMap] = useState({ uk: ukJson, en: enJson });
+  const translationsMap = { uk: ukJson, en: enJson };
 
   const t = (key, variables = {}) => {
     const current = translationsMap[lang] || {};
