@@ -24,7 +24,7 @@
     "sitemap": "^9.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.7",
+    "@biomejs/biome": "2.5.8",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "typescript": "^7.0.2"
